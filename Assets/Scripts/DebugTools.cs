@@ -9,6 +9,7 @@ public class DebugTools : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.A))
         {
             DialogManager.instance.OnCharacterSpeak.Invoke(DialogKey.carrotNotChopped);
+            SoundManager.instance.PlayEffect(SoundType.carrotChop);
         }
 
         if (Input.GetKeyDown(KeyCode.S))

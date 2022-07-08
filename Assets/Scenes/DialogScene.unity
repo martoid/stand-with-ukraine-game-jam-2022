@@ -824,6 +824,7 @@ Transform:
   m_Children:
   - {fileID: 1773965039}
   - {fileID: 1648964880}
+  - {fileID: 1805495988}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1169,6 +1170,54 @@ MonoBehaviour:
   OnCharacterSpeak:
     m_PersistentCalls:
       m_Calls: []
+  typingSpeed: 0.02
+--- !u!1 &1805495987
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1805495988}
+  - component: {fileID: 1805495989}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1805495988
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1805495987}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1222598596}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1805495989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1805495987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34c9320a8dac654479310ac6d389c62a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundsSo: {fileID: 11400000, guid: 0054cdafd9eb7424cb8f848cc7da6bbb, type: 2}
+  _musicSource: {fileID: 6162198632775636237, guid: ace7f9d7de7d79f409f7ee9e7ba19a74, type: 3}
+  _effectSource: {fileID: 6162198632775636237, guid: 72ace66aad87d2a4bb3b4accd0db93e5, type: 3}
 --- !u!1 &1823578438
 GameObject:
   m_ObjectHideFlags: 0
