@@ -425,7 +425,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Oh biyeqwegqwueg u gqeuowegquowegoqwue
+  m_text: Did you knew that potatoes and tomatoes began being added to borsch in
+    the 19th century
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b2e73ecfd2d5c7e4bbd08d5fe62f23c8, type: 2}
   m_sharedMaterial: {fileID: 4702580670982882214, guid: b2e73ecfd2d5c7e4bbd08d5fe62f23c8, type: 2}
@@ -488,7 +489,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -275.32715, y: -122.6897, z: -709.146, w: -3.293335}
+  m_margin: {x: -275.32715, y: -122.6897, z: -861.6118, w: -68.09021}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
