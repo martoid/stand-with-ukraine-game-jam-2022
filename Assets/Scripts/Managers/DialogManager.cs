@@ -13,7 +13,7 @@ public class DialogManager : MonoBehaviour
 
     [SerializeField] float dialogLifeTime = 4f;
 
-    private void Start()
+    private void Awake()
     {
         Gameplay.instance.OnCharacterSpeak.AddListener(ShowMessage);
     }
