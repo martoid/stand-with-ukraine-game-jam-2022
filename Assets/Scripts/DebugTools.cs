@@ -6,20 +6,5 @@ public class DebugTools : MonoBehaviour
 {
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            DialogManager.instance.OnCharacterSpeak.Invoke(DialogKey.carrotNotChopped);
-            SoundManager.instance.PlayEffect(SoundType.carrotChop);
-        }
-
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            DialogManager.instance.OnCharacterSpeak.Invoke(DialogKey.carrotCorrect);
-        }
-
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            DialogManager.instance.OnCharacterSpeak.Invoke(DialogKey.onionNotChopped);
-        }
     }
 }

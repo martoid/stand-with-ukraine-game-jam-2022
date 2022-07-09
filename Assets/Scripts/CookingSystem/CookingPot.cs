@@ -62,6 +62,35 @@ public class CookingPot : ActionFinish
             go.transform.Translate(Vector2.down * velocity * Time.deltaTime);
         }
 
+        switch (go.GetComponent<Ingredient>().type)
+        {
+            case BortschRecipeSO.Ingredient.BeetRoot:
+                Gameplay.instance.OnActionPerformed.Invoke(Action.beetAdded);
+                break;
+            case BortschRecipeSO.Ingredient.Salt:
+                Gameplay.instance.OnActionPerformed.Invoke(Action.saltAdded);
+                break;
+            case BortschRecipeSO.Ingredient.Pepper:
+                break;
+            case BortschRecipeSO.Ingredient.Carrot:
+                break;
+            case BortschRecipeSO.Ingredient.Potatoe:
+                break;
+            case BortschRecipeSO.Ingredient.Leaf:
+                break;
+            case BortschRecipeSO.Ingredient.Garlic:
+                break;
+            case BortschRecipeSO.Ingredient.Onion:
+                break;
+            case BortschRecipeSO.Ingredient.Tomatoe:
+                break;
+            case BortschRecipeSO.Ingredient.Cabbage:
+                Gameplay.instance.OnActionPerformed.Invoke(Action.cabbageAdded);
+                break;
+            default:
+                break;
+        }
+
         // This is where the ingredient hits the water
         Destroy(go);
         Instantiate(liquidParticle.gameObject, go.transform.position, Quaternion.identity);

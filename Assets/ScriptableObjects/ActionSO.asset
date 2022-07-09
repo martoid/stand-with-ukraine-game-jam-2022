@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72dfdc315915d83408c53cfda99a814b, type: 3}
+  m_Name: ActionSO
+  m_EditorClassIdentifier: 
+  actions:
+  - actionKey: 0
+    actionMessage: Are you trying to increase my blood pressure with all that salt?
+    requiredAmount: 5
+    timesPerformed: 0
+    alreadyShowed: 0
+  - actionKey: 4
+    actionMessage: I thought you are making a borscht not cabbage soup
+    requiredAmount: 1
+    timesPerformed: 5
+    alreadyShowed: 1
+  - actionKey: 5
+    actionMessage: Remember that good borscht is made not only from beetroot
+    requiredAmount: 1
+    timesPerformed: 0
+    alreadyShowed: 0

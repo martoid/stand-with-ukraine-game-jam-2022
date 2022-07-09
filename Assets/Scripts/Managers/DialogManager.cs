@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -5,63 +6,44 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 
-public enum DialogKey
-{
-    carrotNotChopped = 0,
-    carrotCorrect = 1,
-    onionNotChopped = 2,
-}
-
-[Serializable]
-public class DialogText
-{
-    public DialogKey key;
-    public string text;
-}
-
 public class DialogManager : MonoBehaviour
 {
-    public static DialogManager instance;
-
-    [SerializeField] DialogSO dialogSO;
-
+    [SerializeField] GameObject dialogBackground;
     [SerializeField] TextMeshProUGUI characterTextField;
 
-    [HideInInspector] public UnityEvent<DialogKey> OnCharacterSpeak = new UnityEvent<DialogKey>();
+    [SerializeField] float dialogLifeTime = 4f;
 
-    [SerializeField] float typingSpeed = 0.02f;
-
-    private void Awake()
+    private void Start()
     {
-        instance = this;
-
-        OnCharacterSpeak.AddListener(ShowMessage);
+        Gameplay.instance.OnCharacterSpeak.AddListener(ShowMessage);
     }
 
-    private void ShowMessage(DialogKey key)
+    private void ShowMessage(string message)
+    {
+        characterTextField.text = message;
+
+        StopAllCoroutines();
+        StartCoroutine(ShowText());
+    }
+
+    IEnumerator ShowText()
+    {
+        scaleDown.Kill();
+        dialogBackground.transform.localScale = new Vector3(1f, 1f, 1f);
+        dialogBackground.SetActive(true);
+        yield return new WaitForSeconds(dialogLifeTime);
+        CloseDialog();
+    }
+
+    Tween scaleDown;
+
+    public void CloseDialog()
     {
         StopAllCoroutines();
-        StartCoroutine(TypeSentence(FindText(key)));
-    }
+        scaleDown.Kill();
+        scaleDown = dialogBackground.transform.DOScale(0, 0.3f).SetEase(Ease.OutExpo).OnComplete(() => {
+            dialogBackground.SetActive(false);
+        });
 
-    IEnumerator TypeSentence(string sentence)
-    {
-        characterTextField.text = "";
-        foreach (char letter in sentence.ToCharArray())
-        {
-            characterTextField.text += letter;
-            yield return new WaitForSeconds(typingSpeed);
-        }
-    }
-
-    private string FindText(DialogKey key)
-    {
-        foreach (var message in dialogSO.messages)
-        {
-            if (message.key == key)
-                return message.text;
-        }
-
-        return null;
     }
 }
