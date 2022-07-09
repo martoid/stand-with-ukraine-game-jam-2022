@@ -94,7 +94,7 @@ PrefabInstance:
     - target: {fileID: 6156374021390796364, guid: c8174839b995eaf49be1d689d174715b, type: 3}
       propertyPath: draggedObject
       value: 
-      objectReference: {fileID: 2466962133787421921, guid: 92d0a97de2e661443a6498a662be6c57, type: 3}
+      objectReference: {fileID: 6377720604482685768, guid: 92d0a97de2e661443a6498a662be6c57, type: 3}
     - target: {fileID: 6156374021390796365, guid: c8174839b995eaf49be1d689d174715b, type: 3}
       propertyPath: m_RootOrder
       value: 0

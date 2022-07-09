@@ -14,6 +14,9 @@ public class PouredIngredient : Ingredient
     [SerializeField] float pourAmount;
     [SerializeField] float pourPerSecond;
 
+    [SerializeField] SpriteRenderer indicator;
+    [SerializeField] Vector2 distanceFadeBounds;
+
     Vector2 position;
     Quaternion rotation;
 
@@ -78,6 +81,18 @@ public class PouredIngredient : Ingredient
         }
         targetVolume = currentPour / Time.deltaTime;
         pourSound.volume = Mathf.Lerp(pourSound.volume, targetVolume, Time.deltaTime * 20);
+
+        if (Gameplay.instance.isDragging())
+        {
+            indicator.SetOpacity(0);
+        }
+        else
+        {
+            float distt = Vector2.Distance(transform.position, InteractableController.cursorWorldPosition);
+            float minOpacity = Mathf.InverseLerp(distanceFadeBounds.y, distanceFadeBounds.x, distt);
+
+            indicator.SetOpacity(minOpacity);
+        }
     }
     public override void BeginDrag(Vector2 cursorPosition)
     {

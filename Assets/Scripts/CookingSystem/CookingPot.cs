@@ -54,10 +54,12 @@ public class CookingPot : ActionFinish
 
     [SerializeField] float waterHeight;
     [SerializeField] float fallVelocityInreasePerSecond;
+    [SerializeField] int maxLightSeconds;
 
     [SerializeField] GameObject liquidParticle;
 
     [SerializeField] Renderer[] SoupRenders;
+    [SerializeField] Transform fireLevel;
 
     public int remainingFireSeconds { get; set; }
 
@@ -154,6 +156,11 @@ public class CookingPot : ActionFinish
     public void PresentBorsch()
     {
         process.PrintDebug();
+    }
+
+    private void Update()
+    {
+        fireLevel.localScale = new Vector3(1, Mathf.Clamp01((float)remainingFireSeconds / maxLightSeconds), 1);
     }
 
     private void OnDrawGizmos()
