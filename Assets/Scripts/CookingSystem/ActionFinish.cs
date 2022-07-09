@@ -3,9 +3,13 @@ using InteractionSystem2D;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ActionFinish : InteractableDragTarget
 {
+    public UnityEvent OnPrimed;
+    public UnityEvent OnUnprimed;
+
     [SerializeField] SpriteRenderer indicatorSr;
 
     protected Collider2D col;
@@ -21,11 +25,13 @@ public class ActionFinish : InteractableDragTarget
     {
         col.enabled = true;
         indicatorSr.DOFade(1, 0.5f);
+        OnPrimed.Invoke();
     }
     public virtual void Unprime()
     {
         col.enabled = false;
         indicatorSr.DOFade(0, 0.5f);
+        OnUnprimed.Invoke();
     }
     public override void InteractableDragHover(Interactable interactable)
     {

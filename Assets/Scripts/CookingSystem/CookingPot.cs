@@ -50,13 +50,22 @@ public class CookingPot : ActionFinish
             Debug.Log($"{recipe}");
         }
     }
+    [SerializeField] Color initialSoupColor;
+
     [SerializeField] float waterHeight;
     [SerializeField] float fallVelocityInreasePerSecond;
 
     [SerializeField] GameObject liquidParticle;
 
+    [SerializeField] Renderer[] SoupRenders;
+
     public int remainingFireSeconds { get; set; }
 
+    protected override void Awake()
+    {
+        base.Awake();
+        SetColor(initialSoupColor);
+    }
     CookingProcess process;
     IEnumerator Start()
     {
@@ -78,6 +87,13 @@ public class CookingPot : ActionFinish
         if(interactable is not PouredIngredient)
         {
             StartCoroutine(Plop((Ingredient)interactable));
+        }
+    }
+    public void SetColor(Color color)
+    {
+        foreach (var item in SoupRenders)
+        {
+            item.sharedMaterial.SetColor("_Tint", color);
         }
     }
 
