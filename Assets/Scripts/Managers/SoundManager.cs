@@ -12,6 +12,8 @@ public enum SoundType
     splash = 5,
     discard = 6,
     grate = 7,
+    pourLiquid = 8,
+    releaseBottle = 9,
 }
 
 [Serializable]

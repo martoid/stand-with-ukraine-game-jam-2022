@@ -21,6 +21,17 @@ public class PouredIngredient : Ingredient
 
     float currentPour = 0;
 
+    AudioSource pourSound;
+    float targetVolume = 0;
+
+    private void Start()
+    {
+        pourSound = SoundManager.instance.GetSoundObject(SoundType.pourLiquid);
+        pourSound.playOnAwake = false;
+        pourSound.transform.parent = gameObject.transform;
+        pourSound.Play();
+    }
+
     protected override void Awake()
     {
         base.Awake();
@@ -39,6 +50,8 @@ public class PouredIngredient : Ingredient
         {
             draggable = true;
         });
+
+        SoundManager.instance.PlayEffect(SoundType.releaseBottle);
     }
 
     private void Update()
@@ -63,6 +76,8 @@ public class PouredIngredient : Ingredient
         {
             Gameplay.instance.cookingPot.AddIngredient(type);
         }
+        targetVolume = currentPour / Time.deltaTime;
+        pourSound.volume = Mathf.Lerp(pourSound.volume, targetVolume, Time.deltaTime * 20);
     }
     public override void BeginDrag(Vector2 cursorPosition)
     {
@@ -72,6 +87,7 @@ public class PouredIngredient : Ingredient
     }
     public override void EndDrag(Vector2 cursorPosition, InteractableDragTarget target)
     {
+        targetVolume = 0;
         base.EndDrag(cursorPosition, target);
         Gameplay.instance.cookingPot.Unprime();
         DestroyIngredient();
