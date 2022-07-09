@@ -23,17 +23,20 @@ public class GratedIngredient : Ingredient
         }
     }
 
+    Vector2 lastPosition;
+    Vector2 deltaPosition;
+
     public override void Dragging(Vector2 cursorPosition)
     {
         if (isGrating)
         {
-            //var collider = Gameplay.instance.grater.GetComponent<CircleCollider2D>();
-            //var min = col.center - col.size * 0.5f;
-            //var max = col.center + col.size * 0.5f;
+            var grater = Gameplay.instance.grater;
+            transform.position = new Vector2(
+                Mathf.Clamp(cursorPosition.x, grater.transform.position.x - 1f, grater.transform.position.x + 1f),
+                Mathf.Clamp(cursorPosition.y, grater.transform.position.y - 1f, grater.transform.position.y + 1f));
 
-            //transform.position = new Vector2(
-            //    Mathf.Clamp(cursorPosition.x, collider., collider.bounds.max.x), 
-            //    Mathf.Clamp(cursorPosition.y, collider.bounds.min.y, collider.bounds.max.y));
+            deltaPosition = (Vector2)transform.position - lastPosition;
+            lastPosition = transform.position;
         }
         else
         {
@@ -48,15 +51,24 @@ public class GratedIngredient : Ingredient
             item.Unprime();
         }
 
-        base.EndDrag(cursorPosition, target);
-
-        if(target == Gameplay.instance.grater)
+        if (isGrating)
         {
-            Gameplay.instance.grater.inUse = true;
+            OnUsedUp.Invoke();
+            OnUsedUp.RemoveAllListeners();
+            transform.position = Gameplay.instance.grater.transform.position;
+        }
+        else
+        {
+            base.EndDrag(cursorPosition, target);
 
-            isGrating = true;
+            if (target == Gameplay.instance.grater)
+            {
+                Gameplay.instance.grater.inUse = true;
 
-            transform.position = target.transform.position;
+                isGrating = true;
+
+                transform.position = target.transform.position;
+            }
         }
     }
 }
