@@ -40,6 +40,7 @@ public class CuttableIngredient : Ingredient
         {
             OnCut.Invoke();
             sr.sprite = CutSprites[CutSprites.Length - cutsLeft];
+            SoundManager.instance.PlayEffect(SoundType.choppingSound);
             cutsLeft--;
             if (cutsLeft <= 0)
             {

@@ -6,6 +6,10 @@ public enum SoundType
 {
     carrotChop = 0,
     talking = 1,
+    boilingWater = 2,
+    choppingSound = 3,
+    grabSound = 4,
+    splash = 5,
 }
 
 [Serializable]
@@ -30,15 +34,24 @@ public class SoundManager : MonoBehaviour
         instance = this;
     }
 
-    public void PlayEffect(SoundType clip, float deviation = 0)
+    public void PlayEffect(SoundType clip, float deviation = 0, bool loop = false)
     {
         var sound = Instantiate(_effectSource, transform);
         var audioClip = FindClip(clip, soundsSo.sounds);
         var source = sound.GetComponent<AudioSource>();
-        source.PlayOneShot(audioClip);
-        source.pitch += UnityEngine.Random.Range(-deviation, deviation);
 
-        DOVirtual.DelayedCall(audioClip.length, () => sound.SetActive(false));
+        if (loop)
+        {
+            source.clip = audioClip;
+            source.loop = true;
+            source.Play();
+        }
+        else
+        {
+            source.PlayOneShot(audioClip);
+            source.pitch += UnityEngine.Random.Range(-deviation, deviation);
+            DOVirtual.DelayedCall(audioClip.length, () => sound.SetActive(false));
+        }
     }
 
     public void PlayMusic(SoundType clip)

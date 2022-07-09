@@ -11,6 +11,7 @@ public enum Action
     carrotAdded = 3,
     cabbageAdded = 4,
     beetAdded = 5,
+    ingredientGrab = 6,
 }
 
 [Serializable]
