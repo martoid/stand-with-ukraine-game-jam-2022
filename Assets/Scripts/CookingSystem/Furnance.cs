@@ -13,4 +13,11 @@ public class Furnance : ActionFinish
         Destroy(interactable.gameObject);
         Gameplay.instance.cookingPot.remainingFireSeconds += burnTimePerPlank;
     }
+
+    public override void Prime()
+    {
+        base.Prime();
+
+        SoundManager.instance.PlayEffect(SoundType.ovenDoor);
+    }
 }
