@@ -57,7 +57,7 @@ public class GratedIngredient : Ingredient
             targetVolume = deltaPosition.magnitude/Time.deltaTime;
 
             float floor = 1;
-            float pitchPerSpeed = 1;
+            float pitchPerSpeed = 0.1f;
             grateSound.pitch = floor + pitchPerSpeed*deltaPosition.magnitude / Time.deltaTime;
 
             grateProgress += deltaPosition.magnitude * gratingSpeed;
