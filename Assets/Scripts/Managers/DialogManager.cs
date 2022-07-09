@@ -46,5 +46,7 @@ public class DialogManager : MonoBehaviour
             dialogBackground.SetActive(false);
         });
 
+        SoundManager.instance.PlayEffect(SoundType.popupClose);
+
     }
 }
