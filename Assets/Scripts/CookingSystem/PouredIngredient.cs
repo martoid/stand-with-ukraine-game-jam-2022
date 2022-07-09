@@ -74,5 +74,6 @@ public class PouredIngredient : Ingredient
     {
         base.EndDrag(cursorPosition, target);
         Gameplay.instance.cookingPot.Unprime();
+        DestroyIngredient();
     }
 }
