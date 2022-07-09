@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1535013375534627583}
   - component: {fileID: 1039571946716360783}
-  - component: {fileID: 2466962133787421921}
+  - component: {fileID: -93862241350936462}
   m_Layer: 0
   m_Name: Beet
   m_TagString: Untagged
@@ -49,8 +49,8 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 3
---- !u!114 &2466962133787421921
+  m_Radius: 1.17
+--- !u!114 &-93862241350936462
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -59,7 +59,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1535013375534627581}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e6baf607fe064641afe169412177c79, type: 3}
+  m_Script: {fileID: 11500000, guid: 9b787e52f932b9e48bf9e12409639d40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   OnHoverBegin:
@@ -95,10 +95,6 @@ MonoBehaviour:
       m_Calls: []
   destroyParticle: {fileID: 7223230009282747676, guid: cbb1cd6c3beefd04b83334644bd3e8ed, type: 3}
   type: 0
-  sr: {fileID: 4402384188001386408}
-  CutSprites:
-  - {fileID: 21300000, guid: 6935611b948fe5c4ea682b516a051bbd, type: 3}
-  - {fileID: 21300000, guid: 5ab63ef206e07cb4bb8939329ebc5839, type: 3}
 --- !u!1 &2871377247189645363
 GameObject:
   m_ObjectHideFlags: 0
