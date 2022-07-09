@@ -94,11 +94,15 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   destroyParticle: {fileID: 7223230009282747676, guid: cbb1cd6c3beefd04b83334644bd3e8ed, type: 3}
+  rotationOverSpeed: 10
   type: 9
   sr: {fileID: 4402384188001386408}
   CutSprites:
-  - {fileID: 21300000, guid: 6935611b948fe5c4ea682b516a051bbd, type: 3}
-  - {fileID: 21300000, guid: 5ab63ef206e07cb4bb8939329ebc5839, type: 3}
+  - {fileID: 21300000, guid: dfae83caea4ffb641953ea9f772336f9, type: 3}
+  - {fileID: 21300000, guid: f9ffd877d8493e44eb4ccfe9f7ca3b9b, type: 3}
+  - {fileID: 21300000, guid: a07da74eba3bf4e47b0fb7794a6d01bf, type: 3}
+  - {fileID: 21300000, guid: e4cbe431e4fec464ab6190287f717a07, type: 3}
+  - {fileID: 21300000, guid: 9e64c9396773f1445a0f72cce5b8ca4f, type: 3}
 --- !u!1 &2871377247189645363
 GameObject:
   m_ObjectHideFlags: 0
@@ -125,7 +129,7 @@ Transform:
   m_GameObject: {fileID: 2871377247189645363}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1535013375534627583}
@@ -172,7 +176,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 8b993ea61e5d77a419978f784d677529, type: 3}
+  m_Sprite: {fileID: 21300000, guid: dfae83caea4ffb641953ea9f772336f9, type: 3}
   m_Color: {r: 0.3436547, g: 0.6886792, b: 0.24363652, a: 1}
   m_FlipX: 0
   m_FlipY: 0

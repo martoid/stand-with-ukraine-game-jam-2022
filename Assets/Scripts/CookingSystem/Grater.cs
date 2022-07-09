@@ -16,4 +16,14 @@ public class Grater : ActionFinish
             base.Prime();
         }
     }
+    public override void InteractableDragHover(Interactable interactable)
+    {
+        base.InteractableDragHover(interactable);
+        ((GratedIngredient)interactable).isGrating = true;
+    }
+    public override void InteractableDragUnhover(Interactable interactable)
+    {
+        base.InteractableDragUnhover(interactable);
+        ((GratedIngredient)interactable).isGrating = false;
+    }
 }

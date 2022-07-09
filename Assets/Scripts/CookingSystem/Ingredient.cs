@@ -9,10 +9,17 @@ public class Ingredient : Interactable
     public UnityEvent OnUsedUp;
 
     [SerializeField] GameObject destroyParticle;
+    [SerializeField] float rotationOverSpeed = 10;
 
     public BortschRecipeSO.Ingredient type;
 
     protected Collider2D col;
+
+    protected Vector2 lastPos;
+    protected Vector2 velocity;
+
+    protected Quaternion targetRotation;
+
     protected virtual void Awake()
     {
         col = GetComponent<Collider2D>();
@@ -41,5 +48,13 @@ public class Ingredient : Interactable
     {
         Instantiate(destroyParticle, transform.position, Quaternion.identity);
         Destroy(gameObject);
+    }
+    private void Update()
+    {
+        velocity = (Vector2)transform.position - lastPos;
+        lastPos = transform.position;
+        targetRotation = Quaternion.Euler(0, 0, rotationOverSpeed * -velocity.x);
+
+        transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * 20);
     }
 }

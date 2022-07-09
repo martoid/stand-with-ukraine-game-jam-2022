@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class CuttingBoard : ActionFinish
 {
+    [SerializeField] Animator knifeAnimator;
+
     public Transform cutPlacement;
     public bool inUse { get; set; }
 
@@ -14,6 +16,12 @@ public class CuttingBoard : ActionFinish
         if(!inUse)
         {
             base.Prime();
+            knifeAnimator.SetBool("Primed", true);
         }
+    }
+    public override void Unprime()
+    {
+        base.Unprime();
+        knifeAnimator.SetBool("Primed", false);
     }
 }

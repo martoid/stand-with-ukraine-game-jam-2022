@@ -6,8 +6,18 @@ using UnityEngine;
 
 public class GratedIngredient : Ingredient
 {
+    [SerializeField] SpriteRenderer sr;
+
     bool isGrated = false;
-    bool isGrating = false;
+    public bool isGrating = false;
+
+    Vector2 lastPosition;
+    Vector2 deltaPosition;
+
+    float grateProgress = 0;
+    [SerializeField] Sprite[] gratingSprites;
+    [SerializeField] float gratingSpeed;
+    [SerializeField] ParticleSystem grateParticles;
 
     public override void BeginDrag(Vector2 cursorPosition)
     {
@@ -22,25 +32,34 @@ public class GratedIngredient : Ingredient
             Gameplay.instance.grater.Prime();
         }
     }
-
-    Vector2 lastPosition;
-    Vector2 deltaPosition;
-
     public override void Dragging(Vector2 cursorPosition)
     {
+        base.Dragging(cursorPosition);
         if (isGrating)
         {
-            var grater = Gameplay.instance.grater;
-            transform.position = new Vector2(
-                Mathf.Clamp(cursorPosition.x, grater.transform.position.x - 1f, grater.transform.position.x + 1f),
-                Mathf.Clamp(cursorPosition.y, grater.transform.position.y - 1f, grater.transform.position.y + 1f));
+            grateParticles.enableEmission = true;
 
             deltaPosition = (Vector2)transform.position - lastPosition;
             lastPosition = transform.position;
+
+            grateProgress += deltaPosition.magnitude * gratingSpeed;
+            grateProgress = Mathf.Clamp01(grateProgress);
+
+            int index = Mathf.FloorToInt(grateProgress * (gratingSprites.Length-1));
+            sr.sprite = gratingSprites[index];
+
+            if (grateProgress >= 1)
+            {
+                isGrating = false;
+                isGrated = true;
+                Gameplay.instance.grater.inUse = false;
+                Gameplay.instance.cookingPot.Prime();
+                Gameplay.instance.grater.Unprime();
+            }
         }
         else
         {
-            base.Dragging(cursorPosition);
+            grateParticles.enableEmission = false;
         }
     }
 
@@ -55,20 +74,12 @@ public class GratedIngredient : Ingredient
         {
             OnUsedUp.Invoke();
             OnUsedUp.RemoveAllListeners();
-            transform.position = Gameplay.instance.grater.transform.position;
+            Gameplay.instance.grater.Unprime();
+            DestroyIngredient();
         }
         else
         {
             base.EndDrag(cursorPosition, target);
-
-            if (target == Gameplay.instance.grater)
-            {
-                Gameplay.instance.grater.inUse = true;
-
-                isGrating = true;
-
-                transform.position = target.transform.position;
-            }
         }
     }
 }

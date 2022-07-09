@@ -39,8 +39,7 @@ public class CuttableIngredient : Ingredient
             if (cutsLeft <= 0)
             {
                 FindObjectOfType<CuttingBoard>().inUse = false;
-                DOVirtual.DelayedCall(0.5f, () => draggable = true);
-                //draggable = true;
+                draggable = true;
             }
         }
     }
