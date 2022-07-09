@@ -90,5 +90,6 @@ public class PouredIngredient : Ingredient
         targetVolume = 0;
         base.EndDrag(cursorPosition, target);
         Gameplay.instance.cookingPot.Unprime();
+        DestroyIngredient();
     }
 }

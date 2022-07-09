@@ -75,7 +75,10 @@ public class CookingPot : ActionFinish
     public override void InteractableDraggedOn(Interactable interactable)
     {
         base.InteractableDraggedOn(interactable);
-        StartCoroutine(Plop((Ingredient)interactable));
+        if(interactable is not PouredIngredient)
+        {
+            StartCoroutine(Plop((Ingredient)interactable));
+        }
     }
 
     IEnumerator Plop(Ingredient ingredient)

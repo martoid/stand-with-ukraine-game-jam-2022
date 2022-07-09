@@ -102,6 +102,11 @@ MonoBehaviour:
   sr: {fileID: 4402384188001386408}
   CutSprites:
   - {fileID: 21300000, guid: c6b2be8de4bf7fa449f9a11ee307c0f1, type: 3}
+  - {fileID: 21300000, guid: bce3260c6ee279147a41c3ae3f31d5ad, type: 3}
+  - {fileID: 21300000, guid: 37c3768a78123484280496d113ddd41e, type: 3}
+  - {fileID: 21300000, guid: 7476444b65f48984f89dc09b70d7b52c, type: 3}
+  - {fileID: 21300000, guid: 0db62715a72ec6e45832298f5e016f42, type: 3}
+  - {fileID: 21300000, guid: efbb0512e432d1d469b2f0fb18ffcffd, type: 3}
 --- !u!1 &2871377247189645363
 GameObject:
   m_ObjectHideFlags: 0

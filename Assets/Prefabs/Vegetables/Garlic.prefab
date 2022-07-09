@@ -94,7 +94,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   destroyParticle: {fileID: 7223230009282747676, guid: cbb1cd6c3beefd04b83334644bd3e8ed, type: 3}
+  rotationOverSpeed: 10
   type: 6
+  OnCut:
+    m_PersistentCalls:
+      m_Calls: []
   sr: {fileID: 4402384188001386408}
   CutSprites:
   - {fileID: 21300000, guid: f001476e764512947bbd3a78158c3da1, type: 3}
@@ -172,9 +176,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingLayerID: 977426937
+  m_SortingLayer: 2
+  m_SortingOrder: 100
   m_Sprite: {fileID: 21300000, guid: f001476e764512947bbd3a78158c3da1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
