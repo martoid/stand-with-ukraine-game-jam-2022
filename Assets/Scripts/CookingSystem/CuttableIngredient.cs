@@ -58,6 +58,8 @@ public class CuttableIngredient : Ingredient
             ((CuttingBoard)target).inUse = true;
             draggable = false;
             cutting = true;
+
+            transform.position = target.transform.position;
         }
     }
 }

@@ -19,13 +19,30 @@ public class ActionStart : Interactable
     public override void ClickBegin(Vector2 cursorPosition)
     {
         base.ClickBegin(cursorPosition);
-        Instantiate(draggedObject.gameObject, cursorPosition, Quaternion.identity);
+        ingredient = Instantiate(draggedObject.gameObject, cursorPosition, Quaternion.identity).GetComponent<Ingredient>();
     }
+
+    Ingredient ingredient;
+
+    public override void ClickEnd(Vector2 cursorPosition)
+    {
+        base.ClickEnd(cursorPosition);
+
+        if (ingredient) ingredient.DestroyIngredient();
+    }
+
     private void Update()
     {
-        float distance = Vector2.Distance(transform.position, InteractableController.cursorWorldPosition);
-        float minOpacity = Mathf.InverseLerp(distanceFadeBounds.y, distanceFadeBounds.x, distance);
+        if (Gameplay.instance.isDragging())
+        {
+            indicatorSr.SetOpacity(0);
+        }
+        else
+        {
+            float distance = Vector2.Distance(transform.position, InteractableController.cursorWorldPosition);
+            float minOpacity = Mathf.InverseLerp(distanceFadeBounds.y, distanceFadeBounds.x, distance);
 
-        indicatorSr.SetOpacity(minOpacity);
+            indicatorSr.SetOpacity(minOpacity);
+        }
     }
 }

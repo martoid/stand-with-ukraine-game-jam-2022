@@ -176,5 +176,10 @@ namespace InteractionSystem2D
                 currentInteractable = null;
             }
         }
+
+        public bool isDragging()
+        {
+            return dragging;
+        }
     }
 }

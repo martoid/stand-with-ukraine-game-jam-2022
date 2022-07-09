@@ -33,8 +33,13 @@ public class Ingredient : Interactable
         OnUsedUp.RemoveAllListeners();
         if(!target)
         {
-            Instantiate(destroyParticle, transform.position, Quaternion.identity);
-            Destroy(gameObject);
+            DestroyIngredient();
         }
+    }
+
+    public void DestroyIngredient()
+    {
+        Instantiate(destroyParticle, transform.position, Quaternion.identity);
+        Destroy(gameObject);
     }
 }
