@@ -20,7 +20,6 @@ public class GratedIngredient : Ingredient
     [SerializeField] ParticleSystem grateParticles;
 
     public AudioSource grateSound;
-
     float targetVolume = 0;
 
     private void Start()
@@ -55,6 +54,8 @@ public class GratedIngredient : Ingredient
             deltaPosition = (Vector2)transform.position - lastPosition;
             lastPosition = transform.position;
 
+            targetVolume = deltaPosition.magnitude/Time.deltaTime;
+
             grateProgress += deltaPosition.magnitude * gratingSpeed;
             grateProgress = Mathf.Clamp01(grateProgress);
 
@@ -73,12 +74,14 @@ public class GratedIngredient : Ingredient
         }
         else
         {
+            targetVolume = 0;
             grateParticles.enableEmission = false;
         }
     }
 
     public override void EndDrag(Vector2 cursorPosition, InteractableDragTarget target)
     {
+        targetVolume = 0;
         foreach (var item in FindObjectsOfType<ActionFinish>())
         {
             item.Unprime();
@@ -95,5 +98,9 @@ public class GratedIngredient : Ingredient
         {
             base.EndDrag(cursorPosition, target);
         }
+    }
+    private void Update()
+    {
+        grateSound.volume = Mathf.Lerp(grateSound.volume, targetVolume, Time.deltaTime * 20);
     }
 }

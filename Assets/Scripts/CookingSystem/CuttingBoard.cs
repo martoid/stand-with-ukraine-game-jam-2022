@@ -3,9 +3,12 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+using Cinemachine;
 
 public class CuttingBoard : ActionFinish
 {
+    [SerializeField] CinemachineImpulseSource shake;
     [SerializeField] Animator knifeAnimator;
 
     public Transform cutPlacement;
@@ -14,7 +17,11 @@ public class CuttingBoard : ActionFinish
     public void AssignIngredient(CuttableIngredient cuttable)
     {
         inUse = true;
-        cuttable.OnCut.AddListener(() => knifeAnimator.SetTrigger("Cut"));
+        cuttable.OnCut.AddListener(() => {
+
+            knifeAnimator.SetTrigger("Cut");
+            shake.GenerateImpulse();
+        });
         knifeAnimator.SetBool("InUse", true);
     }
     public void RemoveIngredient()
