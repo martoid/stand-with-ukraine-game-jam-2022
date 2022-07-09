@@ -37,7 +37,7 @@ public class ActionFinish : InteractableDragTarget
         base.InteractableDragUnhover(interactable);
         indicatorSr.transform.DOScale(1, 0.2f);
     }
-    public virtual void GiveObject(GameObject go)
+    public virtual void GiveObject(Ingredient go)
     {
 
     }

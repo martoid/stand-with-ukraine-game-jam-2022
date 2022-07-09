@@ -33,7 +33,7 @@ namespace InteractionSystem2D
         /// Called when click is released to end the drag or the interactable is no longer active.
         /// First Vector2 is where drag originated from, the second one is where it ended.
         /// </summary>
-        public UnityEvent<Vector2, Vector2> OnDragEnd;
+        public UnityEvent<Vector2, Vector2, InteractableDragTarget> OnDragEnd;
 
         /// <summary>
         /// Called each frame the interactable is being dragged from, returns current
@@ -56,10 +56,11 @@ namespace InteractionSystem2D
         /// </summary>
         public UnityEvent<Vector2> OnClickHold;
 
+        public bool draggable { get; set; } = true;
+
         [Header("Parameters")]
         [Tooltip("Vector that is offsetted from the base position used for calculations")]
         public Vector2 pivotOffset = Vector2.zero;
-
         public Vector2 dragTarget { get; set; }
         public bool isBeingDragged { get; set; }
         public bool isHovered { get; set; }
@@ -98,7 +99,7 @@ namespace InteractionSystem2D
         {
             lastPosition = cursorPosition;
             isBeingDragged = false;
-            OnDragEnd.Invoke(dragStartPosition, cursorPosition);
+            OnDragEnd.Invoke(dragStartPosition, cursorPosition, target);
         }
         /// <summary>
         /// Called every frame the interactable is being dragged

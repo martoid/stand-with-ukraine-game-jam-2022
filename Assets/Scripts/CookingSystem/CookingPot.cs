@@ -1,19 +1,54 @@
 using DG.Tweening;
+using InteractionSystem2D;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class CookingPot : ActionFinish
 {
+    public class CookingProcess
+    {
+        public class IngredientProcess
+        {
+            public int count;
+            public int totalTime;
+            public BortschRecipeSO.Ingredient ingredient;
+        }
+        List<IngredientProcess> Ingredients;
+        public void SecondTick()
+        {
+            foreach (var ingredient in Ingredients)
+            {
+                ingredient.totalTime += ingredient.count;
+            }
+        }
+    }
+
+
     [SerializeField] float waterHeight;
     [SerializeField] float fallVelocityInreasePerSecond;
 
     [SerializeField] GameObject liquidParticle;
 
-    public override void GiveObject(GameObject go)
+    int remainingFire = 0;
+    IEnumerator Start()
     {
-        base.GiveObject(go);
-        StartCoroutine(Plop(go));
+        CookingProcess process = new CookingProcess();
+
+        while(true)
+        {
+            yield return new WaitForSeconds(1);
+            if(remainingFire > 0)
+            {
+                process.SecondTick();
+                remainingFire--;
+            }
+        }
+    }
+    public override void InteractableDraggedOn(Interactable interactable)
+    {
+        base.InteractableDraggedOn(interactable);
+        StartCoroutine(Plop(interactable.gameObject));
     }
 
     IEnumerator Plop(GameObject go)

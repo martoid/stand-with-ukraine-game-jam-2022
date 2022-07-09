@@ -145,6 +145,18 @@ namespace InteractionSystem2D
                 currentInteractable.Hovering(worldPoint);
 
 
+                
+                if(Input.GetMouseButton(0))
+                {
+                    currentInteractable.Clicking(worldPoint);
+                    if(currentInteractable.draggable && Vector2.Distance(currentInteractable.dragStartPosition, worldPoint) >= dragThreshold)
+                    {
+                        currentInteractable.dragTarget = worldPoint;
+                        currentInteractable.BeginDrag(worldPoint);
+                        dragging = true;
+                    }
+                }
+
                 if(Input.GetMouseButtonDown(0))
                 {
                     currentInteractable.dragStartPosition = worldPoint;
@@ -153,17 +165,6 @@ namespace InteractionSystem2D
                 else if(Input.GetMouseButtonUp(0))
                 {
                     currentInteractable.ClickEnd(worldPoint);
-                }
-                
-                if(Input.GetMouseButton(0))
-                {
-                    currentInteractable.Clicking(worldPoint);
-                    if(Vector2.Distance(currentInteractable.dragStartPosition, worldPoint) >= dragThreshold)
-                    {
-                        currentInteractable.dragTarget = worldPoint;
-                        currentInteractable.BeginDrag(worldPoint);
-                        dragging = true;
-                    }
                 }
             }
             else
