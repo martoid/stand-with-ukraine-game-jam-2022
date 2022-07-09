@@ -25,7 +25,7 @@ public class ActionStart : Interactable
         base.ClickBegin(cursorPosition);
         ingredient = Instantiate(draggedObject.gameObject, cursorPosition, Quaternion.identity).GetComponent<Ingredient>();
         Instantiate(spawnParticle,transform.position, Quaternion.identity);
-        SoundManager.instance.PlayEffect(SoundType.grabSound, 0.2f);
+        SoundManager.instance.PlayEffect(SoundType.grabSound);
         DOVirtual.DelayedCall(0.5f, () => col.enabled = true);
     }
 

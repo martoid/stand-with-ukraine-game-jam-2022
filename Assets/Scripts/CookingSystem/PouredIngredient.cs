@@ -68,6 +68,7 @@ public class PouredIngredient : Ingredient
     {
         base.BeginDrag(cursorPosition);
         Gameplay.instance.cookingPot.Prime();
+        SoundManager.instance.PlayEffect(SoundType.grabSound);
     }
     public override void EndDrag(Vector2 cursorPosition, InteractableDragTarget target)
     {

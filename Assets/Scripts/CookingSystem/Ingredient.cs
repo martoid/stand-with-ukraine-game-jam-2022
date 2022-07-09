@@ -47,6 +47,7 @@ public class Ingredient : Interactable
     public virtual void DestroyIngredient()
     {
         Instantiate(destroyParticle, transform.position, Quaternion.identity);
+        SoundManager.instance.PlayEffect(SoundType.discard);
         Destroy(gameObject);
     }
     private void Update()

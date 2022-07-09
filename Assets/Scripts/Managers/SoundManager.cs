@@ -10,6 +10,7 @@ public enum SoundType
     choppingSound = 3,
     grabSound = 4,
     splash = 5,
+    discard = 6,
 }
 
 [Serializable]
