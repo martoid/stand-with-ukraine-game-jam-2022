@@ -89,6 +89,8 @@ public class CookingPot : ActionFinish
             ingredient.transform.Translate(Vector2.down * velocity * Time.deltaTime);
         }
 
+        SoundManager.instance.PlayEffect(SoundType.splash);
+
         switch (ingredient.type)
         {
             case BortschRecipeSO.Ingredient.BeetRoot:
