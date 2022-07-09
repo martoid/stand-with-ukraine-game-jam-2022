@@ -11360,7 +11360,7 @@ MonoBehaviour:
   SoupRenders:
   - {fileID: 1190887114}
   - {fileID: 2018384208}
-  fireLevel: {fileID: 190513759}
+  fireLevel: {fileID: 918157501}
 --- !u!1 &3255448236211773168
 GameObject:
   m_ObjectHideFlags: 0

@@ -109,11 +109,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6156374021390796365, guid: c8174839b995eaf49be1d689d174715b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -14.2
+      value: -13.17
       objectReference: {fileID: 0}
     - target: {fileID: 6156374021390796365, guid: c8174839b995eaf49be1d689d174715b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.51
+      value: 0.21
       objectReference: {fileID: 0}
     - target: {fileID: 6156374021390796365, guid: c8174839b995eaf49be1d689d174715b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -149,7 +149,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6156374021390796366, guid: c8174839b995eaf49be1d689d174715b, type: 3}
       propertyPath: m_Name
-      value: TomatoPile Variant
+      value: TomatoPile
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c8174839b995eaf49be1d689d174715b, type: 3}

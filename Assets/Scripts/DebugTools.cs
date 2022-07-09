@@ -6,5 +6,13 @@ public class DebugTools : MonoBehaviour
 {
     private void Update()
     {
+#if UNITY_EDITOR
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            Gameplay.instance.Restart();
+        }
+
+#endif
     }
 }

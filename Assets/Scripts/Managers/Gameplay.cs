@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 [DefaultExecutionOrder(-100)]
 public class Gameplay : MonoBehaviour
@@ -38,5 +39,10 @@ public class Gameplay : MonoBehaviour
     public bool isDragging()
     {
         return interactable.isDragging();
+    }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
