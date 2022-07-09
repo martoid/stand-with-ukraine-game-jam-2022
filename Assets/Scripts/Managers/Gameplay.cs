@@ -9,6 +9,9 @@ public class Gameplay : MonoBehaviour
 
     public InteractableController interactable;
 
+    public CuttingBoard cuttingBoard;
+    public CookingPot cookingPot;
+
     private void Awake()
     {
         instance = this;

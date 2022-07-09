@@ -1210,6 +1210,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactable: {fileID: 519420033}
+  cuttingBoard: {fileID: 1840027953}
+  cookingPot: {fileID: 1511640617}
 --- !u!4 &953077178
 Transform:
   m_ObjectHideFlags: 0

@@ -22,11 +22,11 @@ public class CuttableIngredient : Ingredient
         base.BeginDrag(cursorPosition);
         if(cutsLeft > 0)
         {
-            FindObjectOfType<CuttingBoard>().Prime();
+            Gameplay.instance.cuttingBoard.Prime();
         }
         else
         {
-            FindObjectOfType<CookingPot>().Prime();
+            Gameplay.instance.cookingPot.Prime();
         }
     }
     public override void ClickBegin(Vector2 cursorPosition)
@@ -53,7 +53,7 @@ public class CuttableIngredient : Ingredient
 
         base.EndDrag(cursorPosition, target);
 
-        if(target is CuttingBoard)
+        if(target == Gameplay.instance.cuttingBoard)
         {
             ((CuttingBoard)target).inUse = true;
             draggable = false;
