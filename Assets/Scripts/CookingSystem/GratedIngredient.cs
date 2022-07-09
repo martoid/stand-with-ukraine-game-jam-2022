@@ -19,6 +19,18 @@ public class GratedIngredient : Ingredient
     [SerializeField] float gratingSpeed;
     [SerializeField] ParticleSystem grateParticles;
 
+    public AudioSource grateSound;
+
+    float targetVolume = 0;
+
+    private void Start()
+    {
+        grateSound = SoundManager.instance.GetSoundObject(SoundType.grate);
+        grateSound.playOnAwake = false;
+        grateSound.transform.parent = gameObject.transform;
+        grateSound.Play();
+    }
+
     public override void BeginDrag(Vector2 cursorPosition)
     {
         base.BeginDrag(cursorPosition);
@@ -32,6 +44,7 @@ public class GratedIngredient : Ingredient
             Gameplay.instance.grater.Prime();
         }
     }
+
     public override void Dragging(Vector2 cursorPosition)
     {
         base.Dragging(cursorPosition);
@@ -46,6 +59,7 @@ public class GratedIngredient : Ingredient
             grateProgress = Mathf.Clamp01(grateProgress);
 
             int index = Mathf.FloorToInt(grateProgress * (gratingSprites.Length-1));
+
             sr.sprite = gratingSprites[index];
 
             if (grateProgress >= 1)

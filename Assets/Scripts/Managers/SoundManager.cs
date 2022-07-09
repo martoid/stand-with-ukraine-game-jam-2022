@@ -11,6 +11,7 @@ public enum SoundType
     grabSound = 4,
     splash = 5,
     discard = 6,
+    grate = 7,
 }
 
 [Serializable]
@@ -66,6 +67,17 @@ public class SoundManager : MonoBehaviour
         music.clip = audioClip;
         music.loop = true;
         music.Play();
+    }
+
+    public AudioSource GetSoundObject(SoundType clip)
+    {
+        var sound = Instantiate(_effectSource, transform);
+        var audioClip = FindClip(clip, soundsSo.sounds);
+        var source = sound.GetComponent<AudioSource>();
+        source.clip = audioClip;
+        source.loop = true;
+
+        return source;
     }
 
     private AudioClip FindClip(SoundType clip, Sound[] sounds)
