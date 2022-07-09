@@ -18,7 +18,7 @@ public class CuttableIngredient : Ingredient
 
     protected override void Awake()
     {
-        cutsLeft = CutSprites.Length;
+        cutsLeft = CutSprites.Length-2;
     }
     public override void BeginDrag(Vector2 cursorPosition)
     {
@@ -29,6 +29,7 @@ public class CuttableIngredient : Ingredient
         }
         else
         {
+            sr.sprite = CutSprites[CutSprites.Length-1];
             Gameplay.instance.cuttingBoard.RemoveIngredient();
             Gameplay.instance.cookingPot.Prime();
         }
@@ -39,9 +40,9 @@ public class CuttableIngredient : Ingredient
         if  (cutting && cutsLeft > 0)
         {
             OnCut.Invoke();
-            sr.sprite = CutSprites[CutSprites.Length - cutsLeft];
-            SoundManager.instance.PlayEffect(SoundType.choppingSound);
             cutsLeft--;
+            sr.sprite = CutSprites[CutSprites.Length - cutsLeft - 2];
+            SoundManager.instance.PlayEffect(SoundType.choppingSound);
             if (cutsLeft <= 0)
             {
                 draggable = true;
