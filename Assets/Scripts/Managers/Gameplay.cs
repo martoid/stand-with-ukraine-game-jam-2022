@@ -12,6 +12,7 @@ public class Gameplay : MonoBehaviour
     public CuttingBoard cuttingBoard;
     public CookingPot cookingPot;
     public Furnance furnance;
+    public Grater grater;
 
     private void Awake()
     {
