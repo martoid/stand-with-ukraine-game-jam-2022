@@ -44,7 +44,7 @@ public class Ingredient : Interactable
         }
     }
 
-    public void DestroyIngredient()
+    public virtual void DestroyIngredient()
     {
         Instantiate(destroyParticle, transform.position, Quaternion.identity);
         Destroy(gameObject);

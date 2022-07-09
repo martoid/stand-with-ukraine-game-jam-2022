@@ -9,8 +9,19 @@ public class CuttingBoard : ActionFinish
     [SerializeField] Animator knifeAnimator;
 
     public Transform cutPlacement;
-    public bool inUse { get; set; }
+    public bool inUse { get; private set; }
 
+    public void AssignIngredient(CuttableIngredient cuttable)
+    {
+        inUse = true;
+        cuttable.OnCut.AddListener(() => knifeAnimator.SetTrigger("Cut"));
+        knifeAnimator.SetBool("InUse", true);
+    }
+    public void RemoveIngredient()
+    {
+        inUse = false;
+        knifeAnimator.SetBool("InUse", false);
+    }
     public override void Prime()
     {
         if(!inUse)

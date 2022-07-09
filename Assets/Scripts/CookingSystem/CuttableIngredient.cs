@@ -3,9 +3,12 @@ using InteractionSystem2D;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class CuttableIngredient : Ingredient
 {
+    public UnityEvent OnCut;
+
     [SerializeField] SpriteRenderer sr;
 
     [SerializeField] Sprite[] CutSprites;
@@ -26,6 +29,7 @@ public class CuttableIngredient : Ingredient
         }
         else
         {
+            Gameplay.instance.cuttingBoard.RemoveIngredient();
             Gameplay.instance.cookingPot.Prime();
         }
     }
@@ -34,11 +38,11 @@ public class CuttableIngredient : Ingredient
         base.ClickBegin(cursorPosition);
         if  (cutting && cutsLeft > 0)
         {
+            OnCut.Invoke();
             sr.sprite = CutSprites[CutSprites.Length - cutsLeft];
             cutsLeft--;
             if (cutsLeft <= 0)
             {
-                FindObjectOfType<CuttingBoard>().inUse = false;
                 draggable = true;
             }
         }
@@ -54,7 +58,7 @@ public class CuttableIngredient : Ingredient
 
         if(target == Gameplay.instance.cuttingBoard)
         {
-            ((CuttingBoard)target).inUse = true;
+            Gameplay.instance.cuttingBoard.AssignIngredient(this);
             draggable = false;
             cutting = true;
 
