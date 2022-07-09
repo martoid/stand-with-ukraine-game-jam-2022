@@ -31,6 +31,7 @@ public class DialogManager : MonoBehaviour
         scaleDown.Kill();
         dialogBackground.transform.localScale = new Vector3(1f, 1f, 1f);
         dialogBackground.SetActive(true);
+        SoundManager.instance.PlayEffect(SoundType.popupAppear);
         yield return new WaitForSeconds(dialogLifeTime);
         CloseDialog();
     }

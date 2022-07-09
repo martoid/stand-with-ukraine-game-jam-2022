@@ -14,6 +14,7 @@ public enum SoundType
     grate = 7,
     pourLiquid = 8,
     releaseBottle = 9,
+    popupAppear = 10,
 }
 
 [Serializable]
