@@ -1,4 +1,5 @@
 using DG.Tweening;
+using InteractionSystem2D;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,11 +12,14 @@ public class PouredIngredient : Ingredient
     [SerializeField] float pourAngle;
 
     [SerializeField] float pourAmount;
+    [SerializeField] float pourPerSecond;
 
     Vector2 position;
     Quaternion rotation;
 
     [SerializeField] ParticleSystem pourParticles;
+
+    float currentPour = 0;
 
     protected override void Awake()
     {
@@ -48,5 +52,26 @@ public class PouredIngredient : Ingredient
         sr.transform.rotation = Quaternion.Euler(0,0, rotation);
 
         pourParticles.emissionRate = pourProgression * pourAmount;
+
+        currentPour = pourProgression * pourPerSecond;
+
+        int toPot = Mathf.FloorToInt(currentPour);
+        currentPour -= toPot;
+
+        // Yes, pretty dumb
+        for (int i = 0; i < currentPour; i++)
+        {
+            Gameplay.instance.cookingPot.AddIngredient(type);
+        }
+    }
+    public override void BeginDrag(Vector2 cursorPosition)
+    {
+        base.BeginDrag(cursorPosition);
+        Gameplay.instance.cookingPot.Prime();
+    }
+    public override void EndDrag(Vector2 cursorPosition, InteractableDragTarget target)
+    {
+        base.EndDrag(cursorPosition, target);
+        Gameplay.instance.cookingPot.Unprime();
     }
 }

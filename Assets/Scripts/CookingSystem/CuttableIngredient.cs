@@ -63,7 +63,8 @@ public class CuttableIngredient : Ingredient
             draggable = false;
             cutting = true;
 
-            transform.position = target.transform.position;
+            transform.position = Gameplay.instance.cuttingBoard.cutPlacement.position;
+            transform.rotation = Gameplay.instance.cuttingBoard.cutPlacement.rotation;
         }
     }
 }

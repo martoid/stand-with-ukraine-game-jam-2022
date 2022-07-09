@@ -19,11 +19,13 @@ public class Grater : ActionFinish
     public override void InteractableDragHover(Interactable interactable)
     {
         base.InteractableDragHover(interactable);
-        ((GratedIngredient)interactable).isGrating = true;
+        if(interactable is GratedIngredient)
+            ((GratedIngredient)interactable).isGrating = true;
     }
     public override void InteractableDragUnhover(Interactable interactable)
     {
         base.InteractableDragUnhover(interactable);
-        ((GratedIngredient)interactable).isGrating = false;
+        if(interactable is GratedIngredient)
+            ((GratedIngredient)interactable).isGrating = false;
     }
 }

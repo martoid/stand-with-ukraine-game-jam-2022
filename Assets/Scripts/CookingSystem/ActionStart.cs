@@ -3,6 +3,7 @@ using InteractionSystem2D;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ActionStart : Interactable
 {
@@ -50,5 +51,15 @@ public class ActionStart : Interactable
 
             indicatorSr.SetOpacity(minOpacity);
         }
+    }
+    public override void HoverBegin(Vector2 cursorPosition)
+    {
+        base.HoverBegin(cursorPosition);
+        transform.DOScale(Vector2.one * 1.1f, 0.2f);
+    }
+    public override void HoverEnd(Vector2 cursorPosition)
+    {
+        transform.DOScale(Vector2.one * 1.0f, 0.2f);
+        base.HoverEnd(cursorPosition);
     }
 }

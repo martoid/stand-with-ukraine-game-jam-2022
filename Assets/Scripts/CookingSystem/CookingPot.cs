@@ -12,9 +12,9 @@ public class CookingPot : ActionFinish
         {
             public int count;
             public int totalTime;
-            public BortschRecipeSO.Ingredient ingredient;
+            public BortschRecipeSO.Ingredient type;
         }
-        List<IngredientProcess> Ingredients;
+        List<IngredientProcess> Ingredients = new List<IngredientProcess>();
         public void SecondTick()
         {
             foreach (var ingredient in Ingredients)
@@ -22,49 +22,74 @@ public class CookingPot : ActionFinish
                 ingredient.totalTime += ingredient.count;
             }
         }
+        public void Add(BortschRecipeSO.Ingredient ingredient)
+        {
+            IngredientProcess process = Ingredients.Find(item => item.type == ingredient);
+            if (process != null)
+            {
+                process.count++;
+            }
+            else
+            {
+                Ingredients.Add(new IngredientProcess()
+                {
+                    count = 1,
+                    type = ingredient,
+                    totalTime = 0,
+                });
+            }
+        }
+
+        public void PrintDebug()
+        {
+            string recipe = "The recipe currently in the pot";
+            foreach (var ingredient in Ingredients)
+            {
+                recipe += $"Ingredient: {ingredient.type} | Count: {ingredient.count} | Average cook time: {ingredient.totalTime / ingredient.count}\n";
+            }
+            Debug.Log($"{recipe}");
+        }
     }
-
-
     [SerializeField] float waterHeight;
     [SerializeField] float fallVelocityInreasePerSecond;
 
     [SerializeField] GameObject liquidParticle;
 
-    int remainingFire = 0;
+    public int remainingFireSeconds { get; set; }
+
+    CookingProcess process;
     IEnumerator Start()
     {
-        CookingProcess process = new CookingProcess();
+        process = new CookingProcess();
 
         while(true)
         {
             yield return new WaitForSeconds(1);
-            if(remainingFire > 0)
+            if(remainingFireSeconds > 0)
             {
                 process.SecondTick();
-                remainingFire--;
+                remainingFireSeconds--;
             }
         }
     }
     public override void InteractableDraggedOn(Interactable interactable)
     {
         base.InteractableDraggedOn(interactable);
-        StartCoroutine(Plop(interactable.gameObject));
+        StartCoroutine(Plop((Ingredient)interactable));
     }
 
-    IEnumerator Plop(GameObject go)
+    IEnumerator Plop(Ingredient ingredient)
     {
         float velocity = 0;
-        while(go.transform.position.y > waterHeight)
+        while(ingredient.transform.position.y > waterHeight)
         {
             velocity += Time.deltaTime * fallVelocityInreasePerSecond;
             yield return null;
 
-            go.transform.Translate(Vector2.down * velocity * Time.deltaTime);
+            ingredient.transform.Translate(Vector2.down * velocity * Time.deltaTime);
         }
 
-        SoundManager.instance.PlayEffect(SoundType.splash);
-
-        switch (go.GetComponent<Ingredient>().type)
+        switch (ingredient.type)
         {
             case BortschRecipeSO.Ingredient.BeetRoot:
                 Gameplay.instance.OnActionPerformed.Invoke(Action.beetAdded);
@@ -94,8 +119,20 @@ public class CookingPot : ActionFinish
         }
 
         // This is where the ingredient hits the water
-        Destroy(go);
-        Instantiate(liquidParticle.gameObject, go.transform.position, Quaternion.identity);
+        AddIngredient(ingredient.type);
+        Destroy(ingredient.gameObject);
+        Instantiate(liquidParticle.gameObject, ingredient.transform.position, Quaternion.identity);
+    }
+
+    public void AddIngredient(BortschRecipeSO.Ingredient type)
+    {
+        process.Add(type);
+    }
+
+    [ContextMenu("Present borsch")]
+    public void PresentBorsch()
+    {
+        process.PrintDebug();
     }
 
     private void OnDrawGizmos()

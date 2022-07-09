@@ -6,10 +6,11 @@ using UnityEngine;
 
 public class Furnance : ActionFinish
 {
+    [SerializeField] int burnTimePerPlank = 20;
     public override void InteractableDraggedOn(Interactable interactable)
     {
         base.InteractableDraggedOn(interactable);
         Destroy(interactable.gameObject);
-        print("Fire increase");
+        Gameplay.instance.cookingPot.remainingFireSeconds += burnTimePerPlank;
     }
 }
