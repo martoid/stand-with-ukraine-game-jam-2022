@@ -17,5 +17,6 @@ public class BortschRecipeSO : ScriptableObject
         Garlic,
         Onion,
         Tomatoe,
+        Cabbage,
     }
 }

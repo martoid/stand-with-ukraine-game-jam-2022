@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 10275121}
   - component: {fileID: 10275120}
   m_Layer: 0
-  m_Name: BeetsPile (2)
+  m_Name: GarlicPile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -183,7 +183,7 @@ MonoBehaviour:
   pivotOffset: {x: 0, y: 0}
   distanceFadeBounds: {x: 1, y: 6}
   indicatorSr: {fileID: 442075474}
-  draggedObject: {fileID: 2466962133787421921, guid: 87ded9eca427d694bb0c2fe02ceaf76f, type: 3}
+  draggedObject: {fileID: 2466962133787421921, guid: 2b275f8cf054bc341bc9f66a67271f3c, type: 3}
 --- !u!58 &10275121
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -214,7 +214,7 @@ Transform:
   m_Children:
   - {fileID: 442075475}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &25880078
 GameObject:
@@ -228,7 +228,7 @@ GameObject:
   - component: {fileID: 25880080}
   - component: {fileID: 25880079}
   m_Layer: 0
-  m_Name: BeetsPile (7)
+  m_Name: PatatoPile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -276,7 +276,7 @@ MonoBehaviour:
   pivotOffset: {x: 0, y: 0}
   distanceFadeBounds: {x: 1, y: 6}
   indicatorSr: {fileID: 1646166276}
-  draggedObject: {fileID: 2466962133787421921, guid: 87ded9eca427d694bb0c2fe02ceaf76f, type: 3}
+  draggedObject: {fileID: 2466962133787421921, guid: e2907bcb393e378419bcb453c5c7fdeb, type: 3}
 --- !u!58 &25880080
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -307,7 +307,7 @@ Transform:
   m_Children:
   - {fileID: 1646166277}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &151362031
 GameObject:
@@ -321,7 +321,7 @@ GameObject:
   - component: {fileID: 151362033}
   - component: {fileID: 151362032}
   m_Layer: 0
-  m_Name: BeetsPile (6)
+  m_Name: SaltPile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -369,7 +369,7 @@ MonoBehaviour:
   pivotOffset: {x: 0, y: 0}
   distanceFadeBounds: {x: 1, y: 6}
   indicatorSr: {fileID: 235630159}
-  draggedObject: {fileID: 2466962133787421921, guid: 87ded9eca427d694bb0c2fe02ceaf76f, type: 3}
+  draggedObject: {fileID: 1461763814764829018, guid: 99c8b9edcaa060445b96bdc741d1e7f4, type: 3}
 --- !u!58 &151362033
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -400,7 +400,7 @@ Transform:
   m_Children:
   - {fileID: 235630160}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &177380748
 GameObject:
@@ -414,7 +414,7 @@ GameObject:
   - component: {fileID: 177380750}
   - component: {fileID: 177380749}
   m_Layer: 0
-  m_Name: BeetsPile (1)
+  m_Name: BayLeavesPile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -462,7 +462,7 @@ MonoBehaviour:
   pivotOffset: {x: 0, y: 0}
   distanceFadeBounds: {x: 1, y: 6}
   indicatorSr: {fileID: 916457815}
-  draggedObject: {fileID: 2466962133787421921, guid: 87ded9eca427d694bb0c2fe02ceaf76f, type: 3}
+  draggedObject: {fileID: 1461763814764829018, guid: 5f273390ea3a6d544a831bf5dfce2cea, type: 3}
 --- !u!58 &177380750
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -493,7 +493,7 @@ Transform:
   m_Children:
   - {fileID: 916457816}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &235630158
 GameObject:
@@ -1096,6 +1096,99 @@ Transform:
   m_Father: {fileID: 1555663949}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &758969708
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 758969711}
+  - component: {fileID: 758969710}
+  - component: {fileID: 758969709}
+  m_Layer: 0
+  m_Name: PepperPile
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &758969709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758969708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 980a3e1a0572fa84c95dfdfad1458cfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnHoverBegin:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHoverEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHovering:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDragBegin:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDragEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDragging:
+    m_PersistentCalls:
+      m_Calls: []
+  OnClickBegin:
+    m_PersistentCalls:
+      m_Calls: []
+  OnClickEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  OnClickHold:
+    m_PersistentCalls:
+      m_Calls: []
+  pivotOffset: {x: 0, y: 0}
+  distanceFadeBounds: {x: 1, y: 6}
+  indicatorSr: {fileID: 1159534959}
+  draggedObject: {fileID: 1461763814764829018, guid: f55d0cdb1baddf94fbb5f03e0be97c42, type: 3}
+--- !u!58 &758969710
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758969708}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
+--- !u!4 &758969711
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758969708}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 15.75, y: 7.59, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1159534960}
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &916457814
 GameObject:
   m_ObjectHideFlags: 0
@@ -1212,6 +1305,7 @@ MonoBehaviour:
   interactable: {fileID: 519420033}
   cuttingBoard: {fileID: 1840027953}
   cookingPot: {fileID: 1511640617}
+  furnance: {fileID: 1843256477}
 --- !u!4 &953077178
 Transform:
   m_ObjectHideFlags: 0
@@ -1311,6 +1405,90 @@ Transform:
   m_Father: {fileID: 1804133718}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1146792324
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1146792326}
+  - component: {fileID: 1146792325}
+  m_Layer: 0
+  m_Name: Circle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!212 &1146792325
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1146792324}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 2
+  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &1146792326
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1146792324}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1845396561}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1148488878
 GameObject:
   m_ObjectHideFlags: 0
@@ -1394,6 +1572,90 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1159534958
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1159534960}
+  - component: {fileID: 1159534959}
+  m_Layer: 0
+  m_Name: Circle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!212 &1159534959
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1159534958}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 2
+  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &1159534960
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1159534958}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 758969711}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1323816833
 GameObject:
@@ -1496,7 +1758,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1483166488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1660,7 +1922,7 @@ GameObject:
   - component: {fileID: 1555663948}
   - component: {fileID: 1555663947}
   m_Layer: 0
-  m_Name: BeetsPile (3)
+  m_Name: CarrotPile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1708,7 +1970,7 @@ MonoBehaviour:
   pivotOffset: {x: 0, y: 0}
   distanceFadeBounds: {x: 1, y: 6}
   indicatorSr: {fileID: 739382148}
-  draggedObject: {fileID: 2466962133787421921, guid: 87ded9eca427d694bb0c2fe02ceaf76f, type: 3}
+  draggedObject: {fileID: 2466962133787421921, guid: e99d9a555c80aa348ab252727d953377, type: 3}
 --- !u!58 &1555663948
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1921,7 +2183,7 @@ GameObject:
   - component: {fileID: 1804133717}
   - component: {fileID: 1804133716}
   m_Layer: 0
-  m_Name: BeetsPile (4)
+  m_Name: CabbagePile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1969,7 +2231,7 @@ MonoBehaviour:
   pivotOffset: {x: 0, y: 0}
   distanceFadeBounds: {x: 1, y: 6}
   indicatorSr: {fileID: 1042583411}
-  draggedObject: {fileID: 2466962133787421921, guid: 87ded9eca427d694bb0c2fe02ceaf76f, type: 3}
+  draggedObject: {fileID: 2466962133787421921, guid: 92d0a97de2e661443a6498a662be6c57, type: 3}
 --- !u!58 &1804133717
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2002,6 +2264,90 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1805073845
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1805073846}
+  - component: {fileID: 1805073847}
+  m_Layer: 0
+  m_Name: Circle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1805073846
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1805073845}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.35, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1843256476}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &1805073847
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1805073845}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 1
+  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &1825089097
 GameObject:
   m_ObjectHideFlags: 0
@@ -2179,6 +2525,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1843256476}
+  - component: {fileID: 1843256477}
+  - component: {fileID: 1843256478}
   m_Layer: 0
   m_Name: Furnace
   m_TagString: Untagged
@@ -2197,9 +2545,142 @@ Transform:
   m_LocalPosition: {x: -1.15, y: -6.89, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1805073846}
   m_Father: {fileID: 0}
   m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1843256477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1843256475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0acd599664fdb3840abe9d350d7bbbcf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnInteractableDraggedOn:
+    m_PersistentCalls:
+      m_Calls: []
+  OnInteractableDragHoverBegin:
+    m_PersistentCalls:
+      m_Calls: []
+  OnInteractableDragHoverEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  pivotOffset: {x: 0, y: 0}
+  indicatorSr: {fileID: 1805073847}
+--- !u!58 &1843256478
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1843256475}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 2.31
+--- !u!1 &1845396558
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1845396561}
+  - component: {fileID: 1845396560}
+  - component: {fileID: 1845396559}
+  m_Layer: 0
+  m_Name: OnionPile
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1845396559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1845396558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 980a3e1a0572fa84c95dfdfad1458cfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnHoverBegin:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHoverEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHovering:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDragBegin:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDragEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDragging:
+    m_PersistentCalls:
+      m_Calls: []
+  OnClickBegin:
+    m_PersistentCalls:
+      m_Calls: []
+  OnClickEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  OnClickHold:
+    m_PersistentCalls:
+      m_Calls: []
+  pivotOffset: {x: 0, y: 0}
+  distanceFadeBounds: {x: 1, y: 6}
+  indicatorSr: {fileID: 1146792325}
+  draggedObject: {fileID: 2466962133787421921, guid: 01a344362daab9c44965381cb7f0fd30, type: 3}
+--- !u!58 &1845396560
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1845396558}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
+--- !u!4 &1845396561
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1845396558}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -8.93, y: 0.54, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1146792326}
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1951474595
 GameObject:
@@ -2297,7 +2778,7 @@ GameObject:
   - component: {fileID: 2115157069}
   - component: {fileID: 2115157068}
   m_Layer: 0
-  m_Name: BeetsPile (8)
+  m_Name: WoodPile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2345,7 +2826,7 @@ MonoBehaviour:
   pivotOffset: {x: 0, y: 0}
   distanceFadeBounds: {x: 1, y: 6}
   indicatorSr: {fileID: 334667631}
-  draggedObject: {fileID: 2466962133787421921, guid: 87ded9eca427d694bb0c2fe02ceaf76f, type: 3}
+  draggedObject: {fileID: 7149003884254253268, guid: 7c2099d71b493db49880751c629da9b5, type: 3}
 --- !u!58 &2115157069
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2376,5 +2857,5 @@ Transform:
   m_Children:
   - {fileID: 334667632}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
