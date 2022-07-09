@@ -1,3 +1,4 @@
+using DG.Tweening;
 using InteractionSystem2D;
 using System.Collections;
 using System.Collections.Generic;
@@ -9,6 +10,7 @@ public class ActionStart : Interactable
 
     [SerializeField] SpriteRenderer indicatorSr;
     [SerializeField] Interactable draggedObject;
+    [SerializeField] GameObject spawnParticle;
 
     Collider2D col;
     private void Awake()
@@ -18,8 +20,12 @@ public class ActionStart : Interactable
     }
     public override void ClickBegin(Vector2 cursorPosition)
     {
+        col.enabled = false;
         base.ClickBegin(cursorPosition);
         ingredient = Instantiate(draggedObject.gameObject, cursorPosition, Quaternion.identity).GetComponent<Ingredient>();
+        Instantiate(spawnParticle,transform.position, Quaternion.identity);
+
+        DOVirtual.DelayedCall(0.5f, () => col.enabled = true);
     }
 
     Ingredient ingredient;
