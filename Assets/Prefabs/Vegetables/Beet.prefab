@@ -108,6 +108,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 4a182124b23075648aa8f893c18ff0e6, type: 3}
   gratingSpeed: 0.025
   grateParticles: {fileID: 8525254385413917484}
+  grateSound: {fileID: 0}
 --- !u!1 &2871377247189645363
 GameObject:
   m_ObjectHideFlags: 0
@@ -247,7 +248,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -268,7 +268,7 @@ ParticleSystemRenderer:
   m_SortingLayerID: 977426937
   m_SortingLayer: 2
   m_SortingOrder: 200
-  m_RenderMode: 5
+  m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
   m_MinParticleSize: 0
@@ -488,7 +488,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 0.7075472, g: 0.7075472, b: 0.7075472, a: 1}
-      maxColor: {r: 0.89019614, g: 0.20000002, b: 0.36078432, a: 1}
+      maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 0.8980393, g: 0.89019614, b: 0.89019614, a: 1}
@@ -550,8 +550,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.6
-      minScalar: 0.2
+      scalar: 2.5
+      minScalar: 0.5
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -708,7 +708,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startRotationX:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 0
       minScalar: 0
       maxCurve:
@@ -761,7 +761,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startRotationY:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 0
       minScalar: 0
       maxCurve:
@@ -814,8 +814,8 @@ ParticleSystem:
         m_RotationOrder: 4
     startRotation:
       serializedVersion: 2
-      minMaxState: 0
-      scalar: 0
+      minMaxState: 3
+      scalar: 6.283185
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -1747,7 +1747,7 @@ ParticleSystem:
     uvChannelMask: -1
     rowMode: 1
     sprites:
-    - sprite: {fileID: 21300000, guid: 8b993ea61e5d77a419978f784d677529, type: 3}
+    - sprite: {fileID: 21300000, guid: 50b39e0b79d37b541a6860ef3e8a418b, type: 3}
     flipU: 0
     flipV: 0
   VelocityModule:
@@ -4192,7 +4192,7 @@ ParticleSystem:
         m_RotationOrder: 4
     maxLights: 20
   TrailModule:
-    enabled: 1
+    enabled: 0
     mode: 0
     ratio: 1
     lifetime:
