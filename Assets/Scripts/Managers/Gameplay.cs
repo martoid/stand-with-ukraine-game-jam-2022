@@ -6,6 +6,8 @@ using UnityEngine.Events;
 
 public class Gameplay : MonoBehaviour
 {
+    public BortschRecipeSO recipe;
+
     [HideInInspector] public UnityEvent<Action> OnActionPerformed = new UnityEvent<Action>();
     [HideInInspector] public UnityEvent<string> OnCharacterSpeak = new UnityEvent<string>();
 

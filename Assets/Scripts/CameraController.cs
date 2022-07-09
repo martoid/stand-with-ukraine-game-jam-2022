@@ -10,8 +10,8 @@ public class CameraController : MonoBehaviour
     private void Update()
     {
         Vector2 mouseNormalized = Input.mousePosition / Screen.height;
-        mouseNormalized = (mouseNormalized * 2) - (mouseNormalized / 2);
+        mouseNormalized = ((mouseNormalized) - (Vector2.one/2)) * 2;
 
-        transform.position = (Vector3)mouseNormalized * paralaxAmount - Vector3.forward;
+        transform.position = (Vector3)mouseNormalized * paralaxAmount - Vector3.forward*10;
     }
 }
