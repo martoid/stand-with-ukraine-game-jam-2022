@@ -6,6 +6,9 @@ using UnityEngine;
 
 public class Plate : Interactable
 {
+    [SerializeField] SpriteRenderer indicator;
+    [SerializeField] Vector2 distanceFadeBounds;
+
     Vector2 origin;
     private void Awake()
     {
@@ -34,5 +37,19 @@ public class Plate : Interactable
     {
         base.Dragging(cursorPosition);
         transform.position = cursorPosition;
+    }
+    private void Update()
+    {
+        if (Gameplay.instance.isDragging())
+        {
+            indicator.SetOpacity(0);
+        }
+        else
+        {
+            float distt = Vector2.Distance(transform.position, InteractableController.cursorWorldPosition);
+            float minOpacity = Mathf.InverseLerp(distanceFadeBounds.y, distanceFadeBounds.x, distt);
+
+            indicator.SetOpacity(minOpacity);
+        }
     }
 }
