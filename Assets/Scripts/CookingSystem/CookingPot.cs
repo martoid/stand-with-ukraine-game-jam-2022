@@ -140,7 +140,7 @@ public class CookingPot : ActionFinish
             {
                 var data = recipe.GetData(ingredient.type);
                 // Max single color 1, min 0
-                color += new Vector3(data.color.r, data.color.g, data.color.b);
+                color += new Vector3(data.color.r, data.color.g, data.color.b) * data.color.a;
                 totalPoints += data.color.a;
             }
             Color waterColor = recipe.waterColor;
@@ -170,7 +170,9 @@ public class CookingPot : ActionFinish
 
     [SerializeField] ParticleSystem bubbles;
     [SerializeField] SpriteRenderer waves;
+    [SerializeField] AudioSource boilingSource;
 
+    float baseBoilingSound;
     float bubblesBaseEmission;
     float wavesBaseAmplitude;
 
@@ -178,6 +180,9 @@ public class CookingPot : ActionFinish
     float targetTemperature = 0;
 
     int soupLeft;
+    Color targetColor;
+    Color currentColor;
+
     public int remainingFireSeconds { get; set; }
 
     CookingProcess process;
@@ -186,6 +191,7 @@ public class CookingPot : ActionFinish
         base.Awake();
         bubblesBaseEmission = bubbles.emissionRate;
         wavesBaseAmplitude = waves.material.GetFloat("_Amplitude");
+        baseBoilingSound = boilingSource.volume;
     }
     IEnumerator Start()
     {
@@ -279,7 +285,7 @@ public class CookingPot : ActionFinish
     {
         process.Add(type);
 
-        SetColor(process.GetColor());
+        targetColor = process.GetColor();
     }
 
     private void Update()
@@ -291,7 +297,11 @@ public class CookingPot : ActionFinish
 
         //currentTemprature = Mathf.Lerp(currentTemprature, targetTemperature, 5 * Time.deltaTime);
         currentTemprature = Mathf.MoveTowards(currentTemprature, targetTemperature, Time.deltaTime * 2);
+        boilingSource.volume = baseBoilingSound * currentTemprature;
         SetTemperature(currentTemprature);
+
+        currentColor = Color.Lerp(currentColor, targetColor, Time.deltaTime * 5);
+        SetColor(currentColor);
     }
 
     private void OnDrawGizmos()
@@ -319,8 +329,11 @@ public class CookingPot : ActionFinish
 
     public void RestartGame()
     {
+        soupLevel.localPosition = new Vector3(0, 0, 0);
         process = new CookingProcess();
-        SetColor(process.GetColor());
+        currentColor = process.GetColor();
+        targetColor = currentColor;
+        SetColor(currentColor);
         soupLeft = maxSoupAmount;
     }
 }

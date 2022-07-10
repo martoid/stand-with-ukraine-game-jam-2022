@@ -32,8 +32,6 @@ public class Gameplay : MonoBehaviour
     private void Start()
     {
         OnCharacterSpeak.Invoke(randomHelloText[Random.Range(0, randomHelloText.Length)]);
-
-        SoundManager.instance.PlayEffect(SoundType.boilingWater, 0, true);
     }
 
     public bool isDragging()
