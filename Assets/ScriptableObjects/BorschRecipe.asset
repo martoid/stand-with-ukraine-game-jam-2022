@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28deb16bb56c6f64f9fa3e4ad8abcbc2, type: 3}
+  m_Name: BorschRecipe
+  m_EditorClassIdentifier: 
+  Norms:
+  - type: 0
+    color: {r: 0.7830189, g: 0.24407633, b: 0.12853324, a: 1}
+    perfectAmount: 6
+    cookInterval: {x: 10, y: 50}
+  - type: 1
+    color: {r: 0, g: 0, b: 0, a: 0}
+    perfectAmount: 3
+    cookInterval: {x: 0, y: 999}
+  - type: 2
+    color: {r: 0, g: 0, b: 0, a: 0}
+    perfectAmount: 5
+    cookInterval: {x: 0, y: 999}
+  - type: 3
+    color: {r: 0, g: 0, b: 0, a: 0}
+    perfectAmount: 8
+    cookInterval: {x: 0, y: 999}
+  - type: 4
+    color: {r: 0, g: 0, b: 0, a: 0}
+    perfectAmount: 8
+    cookInterval: {x: 0, y: 999}
+  - type: 5
+    color: {r: 0, g: 0, b: 0, a: 0}
+    perfectAmount: 5
+    cookInterval: {x: 0, y: 999}
+  - type: 6
+    color: {r: 0, g: 0, b: 0, a: 0}
+    perfectAmount: 2
+    cookInterval: {x: 0, y: 999}
+  - type: 7
+    color: {r: 0, g: 0, b: 0, a: 0}
+    perfectAmount: 3
+    cookInterval: {x: 0, y: 999}
+  - type: 8
+    color: {r: 0, g: 0, b: 0, a: 0}
+    perfectAmount: 9
+    cookInterval: {x: 0, y: 999}
+  - type: 9
+    color: {r: 0.8235295, g: 0.6745098, b: 0.3529412, a: 1}
+    perfectAmount: 1
+    cookInterval: {x: 0, y: 999}
+  - type: 10
+    color: {r: 0, g: 0, b: 0, a: 0}
+    perfectAmount: 10
+    cookInterval: {x: 0, y: 999}
+  waterColor: {r: 0.95686275, g: 0.9137255, b: 0.8509804, a: 1}
+  waterColoringStrenght: 0.2
