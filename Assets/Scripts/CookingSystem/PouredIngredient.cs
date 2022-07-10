@@ -29,7 +29,8 @@ public class PouredIngredient : Ingredient
 
     private void Start()
     {
-        pourSound = SoundManager.instance.GetSoundObject(SoundType.pourLiquid);
+        var pourType = type == BortschRecipeSO.Ingredient.OliveOil ? SoundType.pourLiquid : SoundType.pourSalt;
+        pourSound = SoundManager.instance.GetSoundObject(pourType);
         pourSound.playOnAwake = false;
         pourSound.transform.parent = gameObject.transform;
         pourSound.Play();
@@ -106,5 +107,16 @@ public class PouredIngredient : Ingredient
         base.EndDrag(cursorPosition, target);
         Gameplay.instance.cookingPot.Unprime();
         DestroyIngredient();
+    }
+
+    public override void HoverBegin(Vector2 cursorPosition)
+    {
+        base.HoverBegin(cursorPosition);
+        transform.DOScale(Vector2.one * 1.1f, 0.2f);
+    }
+    public override void HoverEnd(Vector2 cursorPosition)
+    {
+        transform.DOScale(Vector2.one * 1.0f, 0.2f);
+        base.HoverEnd(cursorPosition);
     }
 }

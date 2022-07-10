@@ -17,6 +17,7 @@ public enum SoundType
     popupAppear = 10,
     ovenDoor = 11,
     popupClose = 12,
+    pourSalt = 13,
 }
 
 [Serializable]
