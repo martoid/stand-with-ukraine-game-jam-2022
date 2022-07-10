@@ -45,4 +45,8 @@ public class Gameplay : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+    public void Speak(string message)
+    {
+        OnCharacterSpeak.Invoke(message);
+    }
 }

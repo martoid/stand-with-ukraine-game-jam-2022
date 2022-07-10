@@ -8,15 +8,12 @@ using UnityEngine.Events;
 
 public class DialogManager : MonoBehaviour
 {
-    public static DialogManager Instance;
-
     [SerializeField] GameObject dialogBackground;
     [SerializeField] TextMeshProUGUI characterTextField;
 
     [SerializeField] float dialogLifeTime = 4f;
     private void Awake()
     {
-        Instance = this;
         Gameplay.instance.OnCharacterSpeak.AddListener(ShowMessage);
     }
 

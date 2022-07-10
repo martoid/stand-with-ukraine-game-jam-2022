@@ -15,20 +15,35 @@ public class CookingPot : ActionFinish
             {
                 public enum Type { TooMuch, NotEnough, Overcooked, Undercooked, MissingIngredient }
 
-                public int amount;
-                public Type type;
-                public BortschRecipeSO.Ingredient ingredient;
+                public int amount { get; private set; }
+                public Type type { get; private set; }
+                public BortschRecipeSO.Ingredient ingredient { get; private set; }
+                public float penalty { get; private set; }
 
                 public Problem(BortschRecipeSO.Ingredient ingredient, Type type, int amount = 0)
                 {
                     this.ingredient = ingredient;
                     this.type = type;
                     this.amount = amount;
+
+                    penalty = CalculatePriority();
                 }
-                public int Priority()
+                private float CalculatePriority()
                 {
-                    // Implement later
-                    return 100;
+                    var data = recipe.Norms.Find(item => item.type == ingredient);
+                    switch (type)
+                    {
+                        case Type.TooMuch:
+                        case Type.NotEnough:
+                            return  (amount/(float)data.perfectAmount) * recipe.incorrectIngredientCountRelativePenalty;
+                        case Type.Overcooked:
+                        case Type.Undercooked:
+                            int interval = data.cookInterval.y - data.cookInterval.x;
+                            return ((float)amount / interval) * recipe.wrongCookTimeRelativePenalty; 
+                        case Type.MissingIngredient:
+                            return recipe.missingIngredientPenalty;
+                    }
+                    return 0;
                 }
             }
 
@@ -68,19 +83,28 @@ public class CookingPot : ActionFinish
 
                     if (overcooked > 0) Problems.Add(new Problem(item.type, Problem.Type.Overcooked, overcooked));
                     if (undercooked > 0) Problems.Add(new Problem(item.type, Problem.Type.Undercooked, undercooked));
+
+                    Problems = Problems.OrderByDescending(item => item.penalty).ToList();
                 }
             }
 
             public void PrintToConsole()
             {
-                Problems = Problems.OrderBy(item => item.Priority()).ToList();
-
-                string sum = "<b>These are the problems with the soup:</b> \n"; 
+                float penalty = Problems.Sum(item => item.penalty);
+                float rating = recipe.ratingDistribution.Evaluate(penalty);
+                string sum = $"<b>These are the problems with the soup (Penalty:{penalty}, Rating:{rating*10}/10):</b> \n"; 
                 foreach (var problem in Problems)
                 {
-                    sum += $"{problem.ingredient}, {problem.type}, {problem.amount}\n";
+                    sum += $"{problem.penalty}, {problem.ingredient}, {problem.type}, {problem.amount}\n";
                 }
                 Debug.Log($"{sum}");
+            }
+
+            internal void TeachALesson()
+            {
+                var problem = Problems[0];
+                Gameplay.instance.Speak(recipe.Norms.Find(norm => norm.type == problem.ingredient).Lessons.Find(lesson => lesson.problemType == problem.type).Sayings.PickRandom());
+                
             }
         }
         public class IngredientProcess
@@ -289,6 +313,7 @@ public class CookingPot : ActionFinish
         var report = process.GetReport();
 
         report.PrintToConsole();
+        report.TeachALesson();
         return process;
     }
 
