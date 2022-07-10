@@ -47,4 +47,12 @@ public class Gameplay : MonoBehaviour
     {
         OnCharacterSpeak.Invoke(message);
     }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene(0);
+        }
+    }
 }
