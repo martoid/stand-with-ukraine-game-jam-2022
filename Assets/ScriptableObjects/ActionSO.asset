@@ -20,11 +20,11 @@ MonoBehaviour:
     alreadyShowed: 0
   - actionKey: 4
     actionMessage: I thought you are making a borscht not cabbage soup
-    requiredAmount: 1
-    timesPerformed: 5
-    alreadyShowed: 1
+    requiredAmount: 10
+    timesPerformed: 0
+    alreadyShowed: 0
   - actionKey: 5
     actionMessage: Remember that good borscht is made not only from beetroot
-    requiredAmount: 1
+    requiredAmount: 10
     timesPerformed: 0
     alreadyShowed: 0
