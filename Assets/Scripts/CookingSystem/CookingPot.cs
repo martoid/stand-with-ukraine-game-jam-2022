@@ -333,7 +333,7 @@ public class CookingPot : ActionFinish
         report.TeachALesson();
 
         float sc = report.GetRating() * 10;
-        float highscore = PlayerPrefs.GetFloat("Highscore", 0) * 10;
+        float highscore = PlayerPrefs.GetFloat("Highscore", 0);
         if(sc > highscore)
         {
             PlayerPrefs.SetFloat("Highscore", sc);

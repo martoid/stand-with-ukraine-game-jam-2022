@@ -1231,6 +1231,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3587465802603665938, guid: 7edf76b7d4ac8b6458e96605365d2944, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3587465802603665942, guid: 7edf76b7d4ac8b6458e96605365d2944, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -2810,6 +2814,15 @@ PrefabInstance:
       propertyPath: interactable
       value: 
       objectReference: {fileID: 519420033}
+    - target: {fileID: 929429371422828088, guid: 0e2e68274d264c14084a4e73109f8b97, type: 3}
+      propertyPath: randomHelloText.Array.data[0]
+      value: Let's see if you remember anything I tought you
+      objectReference: {fileID: 0}
+    - target: {fileID: 929429371422828088, guid: 0e2e68274d264c14084a4e73109f8b97, type: 3}
+      propertyPath: randomHelloText.Array.data[3]
+      value: Did you know that potatoes and tomatoes began being added to borsch
+        in the 19th century?
+      objectReference: {fileID: 0}
     - target: {fileID: 929429371422828089, guid: 0e2e68274d264c14084a4e73109f8b97, type: 3}
       propertyPath: m_Name
       value: Managers

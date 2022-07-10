@@ -40,15 +40,7 @@ public class SoundManager : MonoBehaviour
 
     void Awake()
     {
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        instance = this;
     }
 
     private void Start()
@@ -87,6 +79,8 @@ public class SoundManager : MonoBehaviour
         music.clip = audioClip;
         music.loop = true;
         music.Play();
+
+        DontDestroyOnLoad(music.gameObject);
     }
 
     public AudioSource GetSoundObject(SoundType clip)

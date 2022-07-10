@@ -39,6 +39,8 @@ public class DialogManager : MonoBehaviour
 
     public void CloseDialog()
     {
+        Debug.Log($"Close dialogue");
+
         StopAllCoroutines();
         scaleDown.Kill();
         scaleDown = dialogBackground.transform.DOScale(0, 0.3f).SetEase(Ease.OutExpo).OnComplete(() => {
