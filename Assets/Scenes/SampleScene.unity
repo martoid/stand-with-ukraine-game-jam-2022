@@ -2785,6 +2785,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2074858906}
     m_Modifications:
+    - target: {fileID: 4812098539398959532, guid: 6abf1213915ae9b47a03d52cba789030, type: 3}
+      propertyPath: m_Radius
+      value: 1.37
+      objectReference: {fileID: 0}
     - target: {fileID: 6478491307454405404, guid: 6abf1213915ae9b47a03d52cba789030, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -3008,6 +3012,10 @@ PrefabInstance:
     - target: {fileID: 583524422223312951, guid: 60f8a48facbee0844ab7c9bfd70ba227, type: 3}
       propertyPath: m_Name
       value: PepperPile
+      objectReference: {fileID: 0}
+    - target: {fileID: 1385177923822629509, guid: 60f8a48facbee0844ab7c9bfd70ba227, type: 3}
+      propertyPath: m_Radius
+      value: 1.37
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 60f8a48facbee0844ab7c9bfd70ba227, type: 3}
