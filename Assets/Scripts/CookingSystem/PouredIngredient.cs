@@ -70,17 +70,17 @@ public class PouredIngredient : Ingredient
 
         pourParticles.emissionRate = pourProgression * pourAmount;
 
-        currentPour = pourProgression * pourPerSecond;
+        currentPour += pourProgression * pourPerSecond * Time.deltaTime;
 
         int toPot = Mathf.FloorToInt(currentPour);
         currentPour -= toPot;
 
         // Yes, pretty dumb
-        for (int i = 0; i < currentPour; i++)
+        for (int i = 0; i < toPot; i++)
         {
             Gameplay.instance.cookingPot.AddIngredient(type);
         }
-        targetVolume = currentPour / Time.deltaTime;
+        targetVolume = pourProgression;
         pourSound.volume = Mathf.Lerp(pourSound.volume, targetVolume, Time.deltaTime * 20);
 
         if (Gameplay.instance.isDragging())

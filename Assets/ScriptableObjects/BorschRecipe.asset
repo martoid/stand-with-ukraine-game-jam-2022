@@ -26,7 +26,7 @@ MonoBehaviour:
       - Yes it's supposed to be mostly beets, but this is too much!
     - problemType: 1
       Sayings:
-      - Do you know what soup we are making, don't be stingy with those beets!
+      - Do you know what soup we are making? Don't be stingy with those beets!
     - problemType: 2
       Sayings:
       - Did you fall asleep? Most of these beets are overcooked!
@@ -39,7 +39,7 @@ MonoBehaviour:
       - How did you forget the beets my dear? This soup is all about the beets!
   - type: 1
     color: {r: 0, g: 0, b: 0, a: 0}
-    perfectAmount: 3
+    perfectAmount: 30
     cookInterval: {x: 0, y: 999}
     Lessons:
     - problemType: 0
@@ -58,7 +58,7 @@ MonoBehaviour:
       - Are we out of salt or did you just forget?
   - type: 2
     color: {r: 0, g: 0, b: 0, a: 0}
-    perfectAmount: 5
+    perfectAmount: 20
     cookInterval: {x: 0, y: 999}
     Lessons:
     - problemType: 0
@@ -224,7 +224,7 @@ MonoBehaviour:
       - How am I supposed to enjoy borsch without any cabbage
   - type: 10
     color: {r: 0, g: 0, b: 0, a: 0}
-    perfectAmount: 50
+    perfectAmount: 10
     cookInterval: {x: 0, y: 999}
     Lessons:
     - problemType: 0
