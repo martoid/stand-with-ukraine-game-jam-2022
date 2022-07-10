@@ -18,6 +18,7 @@ public enum SoundType
     ovenDoor = 11,
     popupClose = 12,
     pourSalt = 13,
+    music = 14,
 }
 
 [Serializable]
@@ -39,7 +40,20 @@ public class SoundManager : MonoBehaviour
 
     void Awake()
     {
-        instance = this;
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    private void Start()
+    {
+        PlayMusic(SoundType.music);
     }
 
     public void PlayEffect(SoundType clip, float deviation = 0, bool loop = false)
