@@ -3,6 +3,7 @@ using InteractionSystem2D;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using UnityEngine;
 
 public class CookingPot : ActionFinish
@@ -47,7 +48,12 @@ public class CookingPot : ActionFinish
                 }
             }
 
-
+            public float GetRating()
+            {
+                float penalty = Problems.Sum(item => item.penalty);
+                float rating = recipe.ratingDistribution.Evaluate(penalty);
+                return rating;
+            }
             public List<Problem> Problems = new List<Problem>();
             public CookingReport(CookingProcess process)
             {
@@ -171,6 +177,7 @@ public class CookingPot : ActionFinish
     [SerializeField] ParticleSystem bubbles;
     [SerializeField] SpriteRenderer waves;
     [SerializeField] AudioSource boilingSource;
+    [SerializeField] TextMeshPro score;
 
     float baseBoilingSound;
     float bubblesBaseEmission;
@@ -324,6 +331,16 @@ public class CookingPot : ActionFinish
 
         report.PrintToConsole();
         report.TeachALesson();
+
+        float sc = report.GetRating() * 10;
+        float highscore = PlayerPrefs.GetFloat("Highscore", 0) * 10;
+        if(sc > highscore)
+        {
+            PlayerPrefs.SetFloat("Highscore", sc);
+        }
+
+        string sourceText = $"Last : {sc:0.##} \nBest : {highscore:0.##}";
+        score.SetText(sourceText);
         return process;
     }
 
