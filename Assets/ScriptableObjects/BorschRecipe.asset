@@ -12,50 +12,253 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28deb16bb56c6f64f9fa3e4ad8abcbc2, type: 3}
   m_Name: BorschRecipe
   m_EditorClassIdentifier: 
+  missingIngredientPenalty: 9999
+  incorrectIngredientCountRelativePenalty: 500
+  wrongCookTimeRelativePenalty: 100
   Norms:
   - type: 0
     color: {r: 0.7830189, g: 0.24407633, b: 0.12853324, a: 1}
     perfectAmount: 6
-    cookInterval: {x: 10, y: 50}
+    cookInterval: {x: 30, y: 60}
+    Lessons:
+    - problemType: 0
+      Sayings:
+      - Yes it's supposed to be mostly beets, but this is too much!
+    - problemType: 1
+      Sayings:
+      - Do you know what soup we are making, don't be stingy with those beets!
+    - problemType: 2
+      Sayings:
+      - Did you fall asleep? Most of these beets are overcooked!
+    - problemType: 3
+      Sayings:
+      - Raw beets are good for you but maybe you should cook them more just for the
+        soup next time...
+    - problemType: 4
+      Sayings:
+      - How did you forget the beets my dear? This soup is all about the beets!
   - type: 1
     color: {r: 0, g: 0, b: 0, a: 0}
     perfectAmount: 3
     cookInterval: {x: 0, y: 999}
+    Lessons:
+    - problemType: 0
+      Sayings:
+      - I think it's too salty
+    - problemType: 1
+      Sayings:
+      - Wouldn't hurt to add a little salt dear
+    - problemType: 2
+      Sayings: []
+    - problemType: 3
+      Sayings:
+      - Placeholder
+    - problemType: 4
+      Sayings:
+      - Are we out of salt or did you just forget?
   - type: 2
     color: {r: 0, g: 0, b: 0, a: 0}
     perfectAmount: 5
     cookInterval: {x: 0, y: 999}
+    Lessons:
+    - problemType: 0
+      Sayings:
+      - I think I'm gonna sneeze, next time a little less pepper please
+    - problemType: 1
+      Sayings:
+      - The soup is not spicy enough, you should add more pepper
+    - problemType: 2
+      Sayings:
+      - Placeholder
+    - problemType: 3
+      Sayings:
+      - Placeholder
+    - problemType: 4
+      Sayings:
+      - I think you forgot the peppers dear
   - type: 3
     color: {r: 0, g: 0, b: 0, a: 0}
     perfectAmount: 8
-    cookInterval: {x: 0, y: 999}
+    cookInterval: {x: 60, y: 120}
+    Lessons:
+    - problemType: 0
+      Sayings:
+      - If I was a rabbit I don't think I would complain, but this soup has too much
+        carrots for a human person
+    - problemType: 1
+      Sayings:
+      - Next time add more carrots, they're good for you!
+    - problemType: 2
+      Sayings:
+      - These carrots spent too much time under the heat, you shouldn't cook them
+        for so long
+    - problemType: 3
+      Sayings:
+      - The carrots are still a little crunchy, they should cook a little longer
+    - problemType: 4
+      Sayings:
+      - The recipe includes carrots, don't forget them next time!
   - type: 4
     color: {r: 0, g: 0, b: 0, a: 0}
     perfectAmount: 8
-    cookInterval: {x: 0, y: 999}
+    cookInterval: {x: 60, y: 120}
+    Lessons:
+    - problemType: 0
+      Sayings:
+      - Too many potatoes!
+    - problemType: 1
+      Sayings:
+      - Don't go light with the potatoes, I really like them!
+    - problemType: 2
+      Sayings:
+      - The potatoes should not cook for that long, it makes them too soft
+    - problemType: 3
+      Sayings:
+      - Nobody likes uncooked potatoes dead, you know better than that
+    - problemType: 4
+      Sayings:
+      - What? You didn't add any potatoes?
   - type: 5
     color: {r: 0, g: 0, b: 0, a: 0}
     perfectAmount: 5
-    cookInterval: {x: 0, y: 999}
+    cookInterval: {x: 20, y: 999}
+    Lessons:
+    - problemType: 0
+      Sayings:
+      - I only feel the bay leafs, maybe you should not add that much of them next
+        time.
+    - problemType: 1
+      Sayings:
+      - This soup could really use some more bay leafs
+    - problemType: 2
+      Sayings:
+      - Apperantly these leafs can be overcoocked
+    - problemType: 3
+      Sayings:
+      - The bay leafs are cold dear
+    - problemType: 4
+      Sayings:
+      - Follow the recipe dear, no bay leaf left behind
   - type: 6
     color: {r: 0, g: 0, b: 0, a: 0}
     perfectAmount: 2
-    cookInterval: {x: 0, y: 999}
+    cookInterval: {x: 20, y: 999}
+    Lessons:
+    - problemType: 0
+      Sayings:
+      - Too much garlic dear, now I'm gonna smell weird for the rest of the day...
+    - problemType: 1
+      Sayings:
+      - What are you a vampire? More garlic, right now!
+    - problemType: 2
+      Sayings:
+      - Garlic should not spend that much time in the heat, they're overcooked
+    - problemType: 3
+      Sayings:
+      - This garlic could use more temperature
+    - problemType: 4
+      Sayings:
+      - Garlic is essential for this soup, why did you skip it?
   - type: 7
     color: {r: 0, g: 0, b: 0, a: 0}
     perfectAmount: 3
-    cookInterval: {x: 0, y: 999}
+    cookInterval: {x: 20, y: 999}
+    Lessons:
+    - problemType: 0
+      Sayings:
+      - The onions are burning my tongue, try less of them next time.
+    - problemType: 1
+      Sayings:
+      - This soup could really use more onions
+    - problemType: 2
+      Sayings:
+      - You left out the onions for too long dear, they're not supossed to boill
+        for that long
+    - problemType: 3
+      Sayings:
+      - The onions are undercooked my dear
+    - problemType: 4
+      Sayings:
+      - No onions? You're not gonna go far in the soup making bussiness without onions!
   - type: 8
     color: {r: 0, g: 0, b: 0, a: 0}
     perfectAmount: 9
-    cookInterval: {x: 0, y: 999}
+    cookInterval: {x: 20, y: 120}
+    Lessons:
+    - problemType: 0
+      Sayings:
+      - Try less tomatoes next time dear
+    - problemType: 1
+      Sayings:
+      - Add some more tomatoes to bring out a richer flavor
+    - problemType: 2
+      Sayings:
+      - These tomatoes seem to be overcooked...
+    - problemType: 3
+      Sayings:
+      - I don't think these tomatoes are done yet, they should cook for a little
+        longer
+    - problemType: 4
+      Sayings:
+      - You know tomatoes are a part of the recipe, right?
   - type: 9
     color: {r: 0.8235295, g: 0.6745098, b: 0.3529412, a: 1}
     perfectAmount: 1
-    cookInterval: {x: 0, y: 999}
+    cookInterval: {x: 120, y: 240}
+    Lessons:
+    - problemType: 0
+      Sayings:
+      - Did you accidently drop a cabbage or two into the pot? I don't think there
+        should be that many
+    - problemType: 1
+      Sayings:
+      - I demand more cabbage!
+    - problemType: 2
+      Sayings:
+      - This cabbage spent too much time in the pot
+    - problemType: 3
+      Sayings:
+      - This cabbage should cook more
+    - problemType: 4
+      Sayings:
+      - How am I supposed to enjoy borsch without any cabbage
   - type: 10
     color: {r: 0, g: 0, b: 0, a: 0}
-    perfectAmount: 10
+    perfectAmount: 50
     cookInterval: {x: 0, y: 999}
+    Lessons:
+    - problemType: 0
+      Sayings:
+      - I feel vinegar, too much vinegar
+    - problemType: 1
+      Sayings:
+      - The soup could use a drop of vinegar, be careful to not overdo it okay?
+    - problemType: 4
+      Sayings:
+      - A soup should have a little vinegar in it
   waterColor: {r: 0.95686275, g: 0.9137255, b: 0.8509804, a: 1}
   waterColoringStrenght: 0.2
+  ratingDistribution:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: -0.00006259092
+      outSlope: -0.00006259092
+      tangentMode: 0
+      weightedMode: 3
+      inWeight: 0.33333334
+      outWeight: 0.29548472
+    - serializedVersion: 3
+      time: 50000
+      value: 0
+      inSlope: 0.0000016908673
+      outSlope: 0.0000016908673
+      tangentMode: 0
+      weightedMode: 3
+      inWeight: 0.120325394
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

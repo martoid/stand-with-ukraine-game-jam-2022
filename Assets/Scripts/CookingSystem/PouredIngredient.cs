@@ -29,7 +29,7 @@ public class PouredIngredient : Ingredient
 
     private void Start()
     {
-        var pourType = type == BortschRecipeSO.Ingredient.OliveOil ? SoundType.pourLiquid : SoundType.pourSalt;
+        var pourType = type == BortschRecipeSO.Ingredient.Vinegar ? SoundType.pourLiquid : SoundType.pourSalt;
         pourSound = SoundManager.instance.GetSoundObject(pourType);
         pourSound.playOnAwake = false;
         pourSound.transform.parent = gameObject.transform;

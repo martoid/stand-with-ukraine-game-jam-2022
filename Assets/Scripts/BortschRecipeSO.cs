@@ -20,21 +20,36 @@ public class BortschRecipeSO : ScriptableObject
         Onion,
         Tomatoe,
         Cabbage,
-        OliveOil,
+        Vinegar,
     }
 
     [System.Serializable]
     public class IngredientData
     {
+        [System.Serializable]
+        public class Lesson
+        {
+            public CookingPot.CookingProcess.CookingReport.Problem.Type problemType;
+            [Multiline]
+            public string[] Sayings;
+        }
+
         public Ingredient type;
         public Color color;
         public int perfectAmount;
         public Vector2Int cookInterval;
+
+        public List<Lesson> Lessons;
     }
+
+    public float missingIngredientPenalty = 9999;
+    public float incorrectIngredientCountRelativePenalty = 500;
+    public float wrongCookTimeRelativePenalty = 100;
 
     public List<IngredientData> Norms = new List<IngredientData>();
     public Color waterColor;
     public float waterColoringStrenght;
+    public AnimationCurve ratingDistribution;
 
     public IngredientData GetData(Ingredient ingredient)
     {
@@ -52,6 +67,25 @@ public class BortschRecipeSO : ScriptableObject
                 {
                     type = item
                 }) ;
+            }
+        }
+    }
+
+    [ContextMenu("Add missing lessons")]
+    public void AddMissingLessons()
+    {
+        foreach (var item in Norms)
+        {
+            foreach (var tp in Enum.GetValues(typeof(CookingPot.CookingProcess.CookingReport.Problem.Type)).Cast<CookingPot.CookingProcess.CookingReport.Problem.Type>())
+            {
+                if (!item.Lessons.Exists(i => i.problemType == tp))
+                {
+                    item.Lessons.Add(new IngredientData.Lesson()
+                    {
+                        problemType = tp,
+                        Sayings = new string[] {"Placeholder"}
+                    });
+                }
             }
         }
     }
